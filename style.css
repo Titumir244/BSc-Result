@@ -104,10 +104,7 @@ img {
 }
 
 .tble {
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin: 10px auto;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 14px;
@@ -129,6 +126,7 @@ button {
     font-size: 16px;
     margin-left: 5px;
 }
+
 
 
 
