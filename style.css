@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.navbar {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 45px;
+    font-weight: bold;
+    color: #0b0223;
+}
+
+.navbar div {
+    display: flex;
+    gap: 20px
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%
+}
+
+.navbar span {
+    display: contents;
+    color: #ff42a5
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    justify-content: center
+}
+
+.navbar li {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a,
+.navbar button {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #3c354f
+}
+
+.navbar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center
+}
+
+.navbar button .fa-youtube {
+    color: #f61c0d;
+    margin: 16px 16px 16px 24px
+}
+
+.navbar a:hover,
+.navbar button:hover {
+    color: #ff42a5;
+    transition: 0.3s;
+    background-color: #cecbcb;
+    padding: 10px 20px;
+    border-radius: 10%;
+}
+
+.navbar button a:hover {
+    padding: 0;
+}
+
+h3 {
+    margin-top: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #999;
+    padding: 6px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
