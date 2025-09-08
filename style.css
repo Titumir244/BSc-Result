@@ -23,8 +23,9 @@ img {
 }
 
 .navbar span {
-    display: contents;
-    color: #ff42a5
+    display: flex;
+    color: #ff42a5;
+    align-items: center;
 }
 
 .navbar ul {
@@ -122,3 +123,4 @@ button {
     font-size: 16px;
     margin-left: 5px;
 }
+
