@@ -85,13 +85,13 @@ img {
 }
 .tab {
     margin: 20px auto;
-    width: 90%;
+    
 }
 
 .tab table {
     border-collapse: collapse;
-    width: 100%;
     margin-top: 10px;
+    margin: 20px auto;
 }
 
 .tab th,
@@ -131,6 +131,7 @@ button {
     font-size: 16px;
     margin-left: 5px;
 }
+
 
 
 
