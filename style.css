@@ -1,4 +1,8 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .navbar {
     margin: auto;
     display: flex;
@@ -113,11 +117,11 @@ img {
 }
 
 .style4 {
-    font-size: 12px
+    font-size: 12px;
 }
 
 .form-container {
-    margin-bottom: 20px;
+    margin: 20px;
     text-align: center;
 }
 
@@ -127,6 +131,7 @@ button {
     font-size: 16px;
     margin-left: 5px;
 }
+
 
 
 
