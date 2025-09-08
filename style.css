@@ -60,10 +60,10 @@ img {
     justify-content: center
 }
 
-.navbar button .fa-youtube {
-    color: #f61c0d;
-    margin: 16px 16px 16px 24px
+.navbar button .fa-facebook {
+    margin: 16px 16px 16px 24px;
 }
+
 
 .navbar a:hover,
 .navbar button:hover {
@@ -123,4 +123,5 @@ button {
     font-size: 16px;
     margin-left: 5px;
 }
+
 
