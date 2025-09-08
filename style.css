@@ -107,6 +107,8 @@ img {
     line-height: 14px;
     letter-spacing: .2px;
     color: #000000;
+    border: 1px solid #000000;
+    padding: 20px;
 }
 
 .style4 {
@@ -115,6 +117,7 @@ img {
 
 .form-container {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 input,
@@ -123,6 +126,7 @@ button {
     font-size: 16px;
     margin-left: 5px;
 }
+
 
 
 
