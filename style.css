@@ -84,16 +84,14 @@ img {
     color: #3c354f;
 }
 .tab {
-    margin: 20px auto;
-    
+    width: 1200px;
 }
 
 .tab table {
     border-collapse: collapse;
-    margin-top: 10px;
-    margin: 20px auto;
+    width: 100%;
+    margin-top: 20px;
 }
-
 .tab th,
 .tab td {
     border: 1px solid #999;
@@ -131,6 +129,7 @@ button {
     font-size: 16px;
     margin-left: 5px;
 }
+
 
 
 
