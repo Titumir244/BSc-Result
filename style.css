@@ -78,7 +78,11 @@ img {
     padding: 0;
 }
 
-
+.form-container label {
+    font-size: 25px;
+    font-weight: 500;
+    color: #3c354f;
+}
 
 .tab table {
     border-collapse: collapse;
@@ -123,5 +127,6 @@ button {
     font-size: 16px;
     margin-left: 5px;
 }
+
 
 
