@@ -83,9 +83,6 @@ img {
     font-weight: 500;
     color: #3c354f;
 }
-.tab {
-    width: 1200px;
-}
 
 .tab table {
     border-collapse: collapse;
@@ -126,6 +123,7 @@ button {
     font-size: 16px;
     margin-left: 5px;
 }
+
 
 
 
