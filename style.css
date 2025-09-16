@@ -126,7 +126,7 @@ img {
     text-align: center;
 }
 
-input,
+select,
 button {
     padding: 6px 10px;
     font-size: 16px;
@@ -157,6 +157,7 @@ button {
   white-space: nowrap;
   pointer-events: none;
 }
+
 
 
 
