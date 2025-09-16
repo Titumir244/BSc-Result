@@ -4,7 +4,7 @@ const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR5Ib1jaojQVFlpH
 document.getElementById("searchBtn").addEventListener("click", () => {
   const roll = document.getElementById("rollInput").value.trim();
   if (!roll) {
-    alert("রোল নম্বর লিখুন");
+    alert("নাম সিলেক্ট করুন");
     return;
   }
 
@@ -57,4 +57,5 @@ function downloadPDF(pdf) {
   };
   html2pdf().set(opt).from(element).save();
 }
+
 
