@@ -146,7 +146,7 @@ button {
 .tab tbody td:nth-child(2) {
     text-align: left;
 }
-table::after {
+.tab table::after {
   content: "© Md Ferdaus Alam";
   position: absolute;
   top: 50%;
@@ -157,6 +157,7 @@ table::after {
   white-space: nowrap;
   pointer-events: none;
 }
+
 
 
 
