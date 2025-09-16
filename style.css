@@ -160,6 +160,9 @@ button {
   pointer-events: none;
 }
 
+#name {
+    font-weight: bold;
+}
 
 
 
