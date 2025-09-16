@@ -136,15 +136,16 @@ button {
     background-color: #f2f2f2;
 }
 
-.tab tr:hover {
+.tab tbody tr:hover {
     background-color: #ddd;
     transition: 0.3s;
     cursor: pointer;
     transform: scale(1.02);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-
+tbody td:nth-child(2) {
+    text-align: left;
+}
 
 
 
