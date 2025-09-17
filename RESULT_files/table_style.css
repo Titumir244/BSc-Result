@@ -20,3 +20,8 @@
   background-color: #4CAF50;
   color: white;
 }
+
+table {
+  position: relative;
+  overflow: hidden;
+}
