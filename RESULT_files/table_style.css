@@ -29,7 +29,7 @@ table {
 .tabl::after {
   content: "© Md Ferdaus Alam";
   position: absolute;
-  top: 100%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-30deg);
   font-size: 60px;
@@ -37,3 +37,4 @@ table {
   white-space: nowrap;
   pointer-events: none;
 }
+
