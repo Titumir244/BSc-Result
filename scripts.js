@@ -1,7 +1,7 @@
 // আপনার Google Sheet-এর CSV URL (যেটা আপনি দিয়েছেন)
 const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR5Ib1jaojQVFlpH0BgM2YxlYvpOxu_cLAoGwNmWlkCiD2a9Cg-MABkIpGpPLI7yQ/pub?gid=289845772&single=true&output=csv";
 
-document.getElementById("searchBtn").addEventListener("click", () => {
+document.getElementById("rollInput").addEventListener("change", () => {
   const roll = document.getElementById("rollInput").value.trim();
   if (!roll) {
     alert("নাম সিলেক্ট করুন");
@@ -57,5 +57,6 @@ function downloadPDF(pdf) {
   };
   html2pdf().set(opt).from(element).save();
 }
+
 
 
