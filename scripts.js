@@ -49,14 +49,15 @@ document.getElementById("rollInput").addEventListener("change", () => {
 function downloadPDF(pdf) {
   let element = document.getElementById(pdf); // যে অংশটাকে PDF বানাতে চাই
   let opt = {
-    margin: 0.5,
+    margin: [15,0,15,15],
     filename: 'Result.pdf',   // ফাইলের নাম
     image: { type: 'jpeg', quality: 1 },
     html2canvas: { scale: 2 },
-    jsPDF: { unit: 'px', format: [780, 900], orientation: 'landscape' }
+    jsPDF: { unit: 'px', format: [810, 860], orientation: 'landscape' }
   };
   html2pdf().set(opt).from(element).save();
 }
+
 
 
 
