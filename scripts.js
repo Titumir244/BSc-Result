@@ -53,10 +53,11 @@ function downloadPDF(pdf) {
     filename: 'Result.pdf',   // ফাইলের নাম
     image: { type: 'jpeg', quality: 1 },
     html2canvas: { scale: 2 },
-    jsPDF: { unit: 'px', format: [770, 900], orientation: 'landscape' }
+    jsPDF: { unit: 'px', format: [780, 900], orientation: 'landscape' }
   };
   html2pdf().set(opt).from(element).save();
 }
+
 
 
 
