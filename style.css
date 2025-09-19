@@ -3,8 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    width: 98%;
+    margin: auto;
+}
 .navbar {
     margin: auto;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,12 +77,17 @@ img {
 }
 
 
-.navbar a:hover,
-.navbar button:hover {
+.navbar a:hover {
     color: #ff42a5;
     transition: 0.3s;
     background-color: #cecbcb;
     padding: 10px 20px;
+    border-radius: 10%;
+}
+.navbar button:hover{
+    color: #ff42a5;
+    transition: 0.3s;
+    background-color: #cecbcb;
     border-radius: 10%;
 }
 
@@ -165,6 +175,7 @@ button {
 #name {
     font-weight: bold;
 }
+
 
 
 
