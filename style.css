@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    width: 98%;
+    min-width: 1100px;
     margin: auto;
 }
 .navbar {
@@ -178,6 +178,7 @@ button {
 #name {
     font-weight: bold;
 }
+
 
 
 
