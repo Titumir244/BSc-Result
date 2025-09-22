@@ -28,7 +28,7 @@ fetch(url)
         const rows = csvText.trim().split("\n").map(r => r.split(","));
 
         // কলাম ইন্ডেক্স (A=0, B=1, ...)
-        const cols1 = [1, 2, 3, 4, 6, 8, 10, 12];
+        const cols1 = [1, 2, 3, 4, 6, 8, 10, 12, 14];
         const cols2 = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24];
         const cols3 = cols2;
         const cols4 = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20,22];
@@ -50,3 +50,4 @@ fetch(url)
     })
 
     .catch(err => console.error("Error loading sheet:", err));
+
