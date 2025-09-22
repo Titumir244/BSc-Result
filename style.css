@@ -95,11 +95,6 @@ img {
     padding: 0;
 }
 
-.form-container label {
-    font-size: 25px;
-    font-weight: 500;
-    color: #3c354f;
-}
 .tab {
     width: 100%;
 }
@@ -135,11 +130,6 @@ img {
 
 .style4 {
     font-size: 12px;
-}
-
-.form-container {
-    margin: 30px;
-    text-align: center;
 }
 
 select,
@@ -179,28 +169,10 @@ button {
     font-weight: bold;
 }
 
+.but {
+    text-align: center;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.tabl {
+    display: none;
+}
