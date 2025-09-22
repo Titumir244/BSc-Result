@@ -21,21 +21,35 @@
   color: white;
 }
 
-.tabl {
+.tabl,
+.tabl4 {
   position: relative;
   overflow: hidden;
 }
 
-.tabl::after {
+.tabl::after,
+.tabl4::after {
   content: "© Md Ferdaus Alam";
   position: absolute;
   top: 41%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-30deg);
   font-size: 60px;
-  color: rgba(0, 0, 0, 0.08); 
+  color: rgba(0, 0, 0, 0.08);
   white-space: nowrap;
   pointer-events: none;
 }
+
+.form-container label {
+  font-size: 25px;
+  font-weight: 500;
+  color: #3c354f;
+}
+
+.form-container {
+  margin: 30px;
+  text-align: center;
+}
+
 
 
