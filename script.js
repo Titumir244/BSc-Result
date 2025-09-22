@@ -11,7 +11,16 @@ function buildTable(targetId, rows, wantedCols) {
             td.textContent = row[colIndex] || "";
 
             // ✨ F থাকলে লাল হাইলাইট
-            if (td.textContent.trim().toUpperCase() === "F") {
+            if (td.textContent.trim().toLowerCase() === "1st") {
+                td.style.color = "#4caf50"; // লেখা লাল
+                td.style.fontWeight = "bold";
+            } else if (td.textContent.trim().toLowerCase() === "2nd") {
+                td.style.color = "#2196f3"; // লেখা লাল
+                td.style.fontWeight = "bold";
+            } else if (td.textContent.trim().toLowerCase() === "3rd") {
+                td.style.color = "#ff9800"; // লেখা লাল
+                td.style.fontWeight = "bold";
+            } else if (td.textContent.trim().toUpperCase() === "F") {
                 td.style.color = "#ff6666"; // লেখা লাল
                 td.style.fontWeight = "bold";
             }
@@ -50,4 +59,5 @@ fetch(url)
     })
 
     .catch(err => console.error("Error loading sheet:", err));
+
 
