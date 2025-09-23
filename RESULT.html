@@ -13,9 +13,7 @@
 <body>
   <section class="navbar">
     <div>
-      <img
-        src="./RESULT_files/unnamed.jpg"
-        alt="">
+      <img src="./RESULT_files/unnamed.jpg" alt="">
       <span>Md Ferdaus Alam</span>
     </div>
     <ul>
@@ -49,6 +47,17 @@
       <option value="21237129519">Rabby</option>
       <option value="19237144059">Mitu</option>
     </select><br><br>
+    <label for="typeInput"><b>Select Type:</b></label>
+    <select name="text" id="typeInput">
+      <option value="">Select Type</option>
+      <option value="final-year">Final Result</option>
+      <option value="first-year">1st Year</option>
+      <option value="second-year">2nd Year</option>
+      <!-- <option value="third-year">3rd Year</option>
+      <option value="fourth-year">4th Year</option> -->
+    </select>
+    <br><br>
+    <button style="text-align: center;" id="searchBtn">Submit</button>
     <button style="text-align: center;" onclick="downloadPDF('pdf')">Download</button>
   </div>
   <!-- Marksheet -->
@@ -122,243 +131,636 @@
                   <td align="left">Subject Name</td>
                   <td colspan="4">37 - MATHEMATICS </td>
                 </tr>
-                <tr bgcolor="#FFFFFF">
+                <!-- <tr bgcolor="#FFFFFF" class="final-year">
                   <td align="left">Credit <span class="style4">(Completed/Total)</span></td>
                   <td colspan="4">56/128</td>
-                </tr>
+                </tr> -->
 
                 <tr bgcolor="#FFFFFF">
                   <td align="left"><strong> Result</strong></td>
                   <td colspan="4">
-                    <strong>CGPA: <span id="cgpa"></span></strong>
+                    <strong class="final-year">CGPA: <span id="cgpa"></span></strong>
+                    <strong class="first-year">GPA: <span id="gpa1"></span></strong>
+                    <strong class="second-year">GPA: <span id="gpa2"></span></strong>
+                    <strong class="third-year">GPA: <span id="gpa3"></span></strong>
+                    <strong class="fourth-year">GPA: <span id="gpa4"></span></strong>
                   </td>
                 </tr>
               </tbody>
             </table>
             <br>
-            <center>
-              <p>
-                <font size="+1">Course wise Letter Grade </font>
-              </p>
-            </center>
-            <div>
-            </div>
-            <table width="760" border="0" align="center" cellpadding="0" cellspacing="0" id="customers">
+            
+            <!-- final year -->
+            <section class="final-year">
+              <center>
+                <p>
+                  <font size="+1">Course wise Letter Grade </font>
+                </p>
+              </center>
+              <table width="760" border="0" align="center" cellpadding="0" cellspacing="0" id="customers">
+                <tbody>
+                  <tr>
+                    <td align="center">
+                      <font color="#000" size="3"><strong>First Year</strong></font>
+                    </td>
+                    <td align="center">
+                      <font color="#000" size="3"><strong>Second Year</strong></font>
+                    </td>
+                    <td align="center">
+                      <font color="#000" size="3"><strong>Third Year</strong></font>
+                    </td>
+                    <td align="center">
+                      <font color="#000" size="3"><strong>Fourth Year</strong></font>
+                    </td>
+                  </tr>
 
-              <tbody>
-                <tr>
-                  <td align="center">
-                    <font color="#000" size="3"><strong>First Year</strong></font>
-                  </td>
-                  <td align="center">
-                    <font color="#000" size="3"><strong>Second Year</strong></font>
-                  </td>
-                  <td align="center">
-                    <font color="#000" size="3"><strong>Third Year</strong></font>
-                  </td>
-                  <td align="center">
-                    <font color="#000" size="3"><strong>Fourth Year</strong></font>
-                  </td>
-                </tr>
+                  <tr align="center" bgcolor="#FFFFFF">
+                    <!-- 1st Year Results -->
+                    <td valign="top">
+                      <table border="0" width="100%" cellpadding="5" cellspacing="0">
+                        <tbody>
+                          <tr style="font-size: 12px">
+                            <td align="center"><b>Course Code(credit)</b></td>
+                            <td align="center"><b>LG</b></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>211501(04)</td>
+                            <td id="211501"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>212707(04)</td>
+                            <td id="212707"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>212709(02)</td>
+                            <td id="212709"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>213607(04)</td>
+                            <td id="213607"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>213608(02)</td>
+                            <td id="213608"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>213701(03)</td>
+                            <td id="213701"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>213703(03)</td>
+                            <td id="213703"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>213705(03)</td>
+                            <td id="213705"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>213707(03)</td>
+                            <td id="213707"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <!-- 2nd Year Results -->
+                    <td valign="top">
+                      <table border="0" width="100%" cellpadding="5" cellspacing="0">
+                        <tbody>
+                          <tr style="font-size: 12px">
+                            <td align="center"><b>Course Code(credit)</b></td>
+                            <td align="center"><b>LG</b></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>222707(04)</td>
+                            <td id="222707"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>222708(02)</td>
+                            <td id="222708"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>223609(04)</td>
+                            <td id="223609"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>223610(02)</td>
+                            <td id="223610"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>223701(04)</td>
+                            <td id="223701"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>223703(04)</td>
+                            <td id="223703"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>223705(04)</td>
+                            <td id="223705"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>223706(04)</td>
+                            <td id="223706"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 13px">
+                            <td colspan="2">English=<span id="english"></span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <!-- 3rd Year Results -->
+                    <td valign="top">
+                      <table border="0" width="100%" cellpadding="5" cellspacing="0">
+                        <tbody>
+                          <tr style="font-size: 12px">
+                            <td align="center"><b>Course Code(credit)</b></td>
+                            <td align="center"><b>LG</b></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>233701(04)</td>
+                            <td id="233701"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>233703(04)</td>
+                            <td id="233703"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>233705(04)</td>
+                            <td id="233705"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>233707(04)</td>
+                            <td id="233707"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>233709(04)</td>
+                            <td id="233709"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>233711(04)</td>
+                            <td id="233711"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>233713(04)</td>
+                            <td id="233713"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>233714(04)</td>
+                            <td id="233714"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <!-- 4th Year Results -->
+                    <td valign="top">
+                      <table border="0" width="100%" cellpadding="5" cellspacing="0">
+                        <tbody>
+                          <tr style="font-size: 12px">
+                            <td align="center"><b>Course Code(credit)</b></td>
+                            <td align="center"><b>LG</b></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>243701(04)</td>
+                            <td id="243701"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>243703(04)</td>
+                            <td id="243703"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>243705(04)</td>
+                            <td id="243705"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>243707(04)</td>
+                            <td id="243707"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>243709(04)</td>
+                            <td id="243709"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>243711(04)</td>
+                            <td id="243711"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>243713(04)</td>
+                            <td id="243713"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>243717(04)</td>
+                            <td id="243717"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>243718(04)</td>
+                            <td id="243718"></td>
+                          </tr>
+                          <tr align="center" style="font-size: 12px">
+                            <td>243720(04)</td>
+                            <td id="243720"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td id="gpa1" style="font-size: 13px"><b>GPA: 2.93</b></td>
+                    <td id="gpa2" style="font-size: 13px"><b>GPA: 3.32</b></td>
+                    <td id="gpa3" style="font-size: 13px"><b>GPA: 0.00</b></td>
+                    <td id="gpa4" style="font-size: 13px"><b>GPA: 0.00</b></td>
+                  </tr>
 
-                <tr align="center" bgcolor="#FFFFFF">
-                  <!-- 1st Year Results -->
-                  <td valign="top">
-                    <table border="0" width="100%" cellpadding="5" cellspacing="0">
-                      <tbody>
-                        <tr style="font-size: 12px">
-                          <td align="center"><b>Course Code(credit)</b></td>
-                          <td align="center"><b>LG</b></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>211501(04)</td>
-                          <td id="211501"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>212707(04)</td>
-                          <td id="212707"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>212709(02)</td>
-                          <td id="212709"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>213607(04)</td>
-                          <td id="213607"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>213608(02)</td>
-                          <td id="213608"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>213701(03)</td>
-                          <td id="213701"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>213703(03)</td>
-                          <td id="213703"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>213705(03)</td>
-                          <td id="213705"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>213707(03)</td>
-                          <td id="213707"></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                  <!-- 2nd Year Results -->
-                  <td valign="top">
-                    <table border="0" width="100%" cellpadding="5" cellspacing="0">
-                      <tbody>
-                        <tr style="font-size: 12px">
-                          <td align="center"><b>Course Code(credit)</b></td>
-                          <td align="center"><b>LG</b></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>222707(04)</td>
-                          <td id="222707"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>222708(02)</td>
-                          <td id="222708"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>223609(04)</td>
-                          <td id="223609"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>223610(02)</td>
-                          <td id="223610"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>223701(04)</td>
-                          <td id="223701"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>223703(04)</td>
-                          <td id="223703"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>223705(04)</td>
-                          <td id="223705"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>223706(04)</td>
-                          <td id="223706"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 13px">
-                          <td colspan="2">English=<span id="english"></span></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                  <!-- 3rd Year Results -->
-                  <td valign="top">
-                    <table border="0" width="100%" cellpadding="5" cellspacing="0">
-                      <tbody>
-                        <tr style="font-size: 12px">
-                          <td align="center"><b>Course Code(credit)</b></td>
-                          <td align="center"><b>LG</b></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>233701(04)</td>
-                          <td id="233701"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>233703(04)</td>
-                          <td id="233703"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>233705(04)</td>
-                          <td id="233705"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>233707(04)</td>
-                          <td id="233707"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>233709(04)</td>
-                          <td id="233709"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>233711(04)</td>
-                          <td id="233711"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>233713(04)</td>
-                          <td id="233713"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>233714(04)</td>
-                          <td id="233714"></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                  <!-- 4th Year Results -->
-                  <td valign="top">
-                    <table border="0" width="100%" cellpadding="5" cellspacing="0">
-                      <tbody>
-                        <tr style="font-size: 12px">
-                          <td align="center"><b>Course Code(credit)</b></td>
-                          <td align="center"><b>LG</b></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>243701(04)</td>
-                          <td id="243701"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>243703(04)</td>
-                          <td id="243703"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>243705(04)</td>
-                          <td id="243705"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>243707(04)</td>
-                          <td id="243707"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>243709(04)</td>
-                          <td id="243709"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>243711(04)</td>
-                          <td id="243711"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>243713(04)</td>
-                          <td id="243713"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>243717(04)</td>
-                          <td id="243717"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>243718(04)</td>
-                          <td id="243718"></td>
-                        </tr>
-                        <tr align="center" style="font-size: 12px">
-                          <td>243720(04)</td>
-                          <td id="243720"></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr align="center">
-                  <td id="gpa1" style="font-size: 13px"><b>GPA: 2.93</b></td>
-                  <td id="gpa2" style="font-size: 13px"><b>GPA: 3.32</b></td>
-                  <td id="gpa3" style="font-size: 13px"><b>GPA: 0.00</b></td>
-                  <td id="gpa4" style="font-size: 13px"><b>GPA: 0.00</b></td>
-                </tr>
+                </tbody>
+              </table>
+            </section>
 
-              </tbody>
-            </table>
+            <!-- 1st year -->
+            <section class="first-year">
+              <table width="100%" align="center" id="customers">
+                <tbody>
+                  <tr align="center" bgcolor="#FFFFFF">
+                    <td colspan="4">
+                      <font color="#000000" size="3"><strong>Course wise Grade </strong></font>
+                    </td>
+                  </tr>
+                  <tr align="center" bgcolor="#FFFFFF">
+                    <td>
+                      <font color="#000000">Course Code</font>
+                    </td>
+                    <td>
+                      <font color="#000000">Course Title </font>
+                    </td>
+                    <td>
+                      <font color="#000000">Credit</font>
+                    </td>
+                    <td>
+                      <font color="#000000">Letter Grade</font>
+                    </td>
+                  </tr>
+                  <tr bgcolor="#FFFFFF">
+                    <td width="76" align="center">
+                      <font size="2">
+                        211501 </font>
+                    </td>
+                    <td width="287">
+                      <font size="2">
+                        HISTORY OF THE EMERGENCE OF INDEPENDENT BANGLADESH </font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">
+                        4 </font>
+                    </td>
+                    <td width="131" align="center" id="211501">
+                      <font size="2"></font>
+                    </td>
+                  </tr>
+                  <tr bgcolor="#FFFFFF">
+                    <td width="76" align="center">
+                      <font size="2">
+                        212707 </font>
+                    </td>
+                    <td width="287">
+                      <font size="2">
+                        PHYSICS-I (MECHANICS, PROPERTIES OF MATTER, WAVES &amp; OPTICS) </font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">
+                        4 </font>
+                    </td>
+                    <td width="131" align="center">
+                      <font size="2">
+                        C+ </font>
+                    </td>
+                  </tr>
+                  <tr bgcolor="#FFFFFF">
+                    <td width="76" align="center">
+                      <font size="2">
+                        212709 </font>
+                    </td>
+                    <td width="287">
+                      <font size="2">
+                        PHYSICS-II (HEAT, THERMODYNAMICS AND RADIATION) </font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">
+                        2 </font>
+                    </td>
+                    <td width="131" align="center">
+                      <font size="2">
+                        B+ </font>
+                    </td>
+                  </tr>
+                  <tr bgcolor="#FFFFFF">
+                    <td width="76" align="center">
+                      <font size="2">
+                        213607 </font>
+                    </td>
+                    <td width="287">
+                      <font size="2">
+                        INTRODUCTION TO STATISTICS </font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">
+                        4 </font>
+                    </td>
+                    <td width="131" align="center">
+                      <font size="2">
+                        C </font>
+                    </td>
+                  </tr>
+                  <tr bgcolor="#FFFFFF">
+                    <td width="76" align="center">
+                      <font size="2">
+                        213608 </font>
+                    </td>
+                    <td width="287">
+                      <font size="2">
+                        STATISTICS PRACTICAL-I </font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">
+                        2 </font>
+                    </td>
+                    <td width="131" align="center">
+                      <font size="2">
+                        A+ </font>
+                    </td>
+                  </tr>
+                  <tr bgcolor="#FFFFFF">
+                    <td width="76" align="center">
+                      <font size="2">
+                        213701 </font>
+                    </td>
+                    <td width="287">
+                      <font size="2">
+                        FUNDAMENTALS OF MATHEMATICS </font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">
+                        3 </font>
+                    </td>
+                    <td width="131" align="center">
+                      <font size="2">
+                        B+ </font>
+                    </td>
+                  </tr>
+                  <tr bgcolor="#FFFFFF">
+                    <td width="76" align="center">
+                      <font size="2">
+                        213703 </font>
+                    </td>
+                    <td width="287">
+                      <font size="2">
+                        CALCULUS - I </font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">
+                        3 </font>
+                    </td>
+                    <td width="131" align="center">
+                      <font size="2">
+                        D </font>
+                    </td>
+                  </tr>
+                  <tr bgcolor="#FFFFFF">
+                    <td width="76" align="center">
+                      <font size="2">
+                        213705 </font>
+                    </td>
+                    <td width="287">
+                      <font size="2">
+                        LINEAR ALGEBRA </font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">
+                        3 </font>
+                    </td>
+                    <td width="131" align="center">
+                      <font size="2">
+                        C+ </font>
+                    </td>
+                  </tr>
+                  <tr bgcolor="#FFFFFF">
+                    <td width="76" align="center">
+                      <font size="2">
+                        213707 </font>
+                    </td>
+                    <td width="287">
+                      <font size="2">
+                        ANALYTIC AND VECTOR GEOMETRY </font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">
+                        3 </font>
+                    </td>
+                    <td width="131" align="center">
+                      <font size="2">
+                        C </font>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <!-- 2nd year -->
+            <section class="second-year">
+              <table width="100%" align="center" id="customers">
+                <tbody>
+                  <tr align="center">
+                    <td colspan="4">
+                      <font color="#000000" size="3"><strong> Course wise Grade</strong></font>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <font size="2"><strong>Course Code</strong></font>
+                    </td>
+                    <td>
+                      <font size="2"><strong>Course Title</strong></font>
+                    </td>
+                    <td>
+                      <font color="#000000">Credit</font>
+                    </td>
+                    <td>
+                      <font color="#000000">Letter Grade</font>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td width="87" align="center">
+                      <font size="2">221109
+                      </font>
+                    </td>
+                    <td width="281">
+                      <font size="2">ENGLISH (COMPULSORY)</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">
+                        0</font>
+                    </td>
+
+                    <td width="91" align="center">
+                      <font size="2">
+                        PASS </font>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="87" align="center">
+                      <font size="2">222707
+                      </font>
+                    </td>
+                    <td width="281">
+                      <font size="2">PHYSICS-III (ELECTRICITY AND MODERN PHYSICS)</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">
+                        4</font>
+                    </td>
+
+                    <td width="91" align="center">
+                      <font size="2">
+                        A- </font>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="87" align="center">
+                      <font size="2">222708
+                      </font>
+                    </td>
+                    <td width="281">
+                      <font size="2">PHYSICS-IV (PHYSICS PRACTICAL)</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">
+                        2</font>
+                    </td>
+
+                    <td width="91" align="center">
+                      <font size="2">
+                        A+ </font>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="87" align="center">
+                      <font size="2">223609
+                      </font>
+                    </td>
+                    <td width="281">
+                      <font size="2">METHODS OF STATISTICS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">
+                        4</font>
+                    </td>
+
+                    <td width="91" align="center">
+                      <font size="2">
+                        Fail </font>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="87" align="center">
+                      <font size="2">223610
+                      </font>
+                    </td>
+                    <td width="281">
+                      <font size="2">STATISTICS PRACTICAL-II</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">
+                        2</font>
+                    </td>
+
+                    <td width="91" align="center">
+                      <font size="2">
+                        A+ </font>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="87" align="center">
+                      <font size="2">223701
+                      </font>
+                    </td>
+                    <td width="281">
+                      <font size="2">CALCULUS- II</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">
+                        4</font>
+                    </td>
+
+                    <td width="91" align="center">
+                      <font size="2">
+                        A+ </font>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="87" align="center">
+                      <font size="2">223703
+                      </font>
+                    </td>
+                    <td width="281">
+                      <font size="2">ORDINARY DIFFERENTIAL EQUATIONS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">
+                        4</font>
+                    </td>
+
+                    <td width="91" align="center">
+                      <font size="2">
+                        A </font>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="87" align="center">
+                      <font size="2">223705
+                      </font>
+                    </td>
+                    <td width="281">
+                      <font size="2">COMPUTER PROGRAMMING (FORTRAN)</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">
+                        4</font>
+                    </td>
+
+                    <td width="91" align="center">
+                      <font size="2">
+                        A+ </font>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="87" align="center">
+                      <font size="2">223706
+                      </font>
+                    </td>
+                    <td width="281">
+                      <font size="2">MATH LAB (PRACTICAL)</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">
+                        4</font>
+                    </td>
+
+                    <td width="91" align="center">
+                      <font size="2">
+                        A+ </font>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <!-- footer -->
             <br>
             <table width="100%">
               <tbody>
@@ -389,6 +791,7 @@
       </tbody>
     </table>
   </div>
+
 
   <script src="scripts.js"></script>
 </body>
