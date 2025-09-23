@@ -237,7 +237,7 @@ function downloadPDF(pdf) {
     filename: 'Result.pdf',
     image: { type: 'jpeg', quality: 1 },
     html2canvas: { scale: 2 },
-    jsPDF: { unit: 'px', format: [810, 860], orientation: 'landscape' }
+    jsPDF: { unit: 'px', format: [740, 860], orientation: 'landscape' }
   };
   html2pdf().set(opt).from(element).save();
 }
@@ -247,3 +247,4 @@ function downloadPDF(pdf) {
 // ==========================
 hideAllTypes();
 document.querySelector(".tabl4").style.display = "none";
+
