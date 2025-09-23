@@ -67,18 +67,138 @@ document.getElementById("searchBtn").addEventListener("click", () => {
         return;
       }
 
-      // Course IDs
-      const courseIds = ["name", "father", "mother", "regi", "cgpa",
-        "211501", "212707", "212709", "213607", "213608", "213701", "213703", "213705", "213707",
-        "gpa1", "english", "222707", "222708", "223609", "223610", "223701", "223703", "223705", "223706",
-        "gpa2", "233701", "233703", "233705", "233707", "233709", "233711", "233713", "233714",
-        "gpa3", "243701", "243703", "243705", "243707", "243709", "243711", "243713", "243717", "243718", "243720", "gpa4"];
+      // Basic student info
+      const basicInfo = {
+        "name": student[0],
+        "father": student[1], 
+        "mother": student[2],
+        "regi": student[3],
+        "final-cgpa": student[4]
+      };
 
-      courseIds.forEach((code, idx) => {
-        const grade = student[idx] || "";
-        const cell = document.getElementById(code);
+      // 1st Year Courses (দুইবার ব্যবহার)
+      const firstYearCourses = {
+        "final-211501": student[5],   // Final Year section
+        "first-211501": student[5],   // 1st Year section
+        "final-212707": student[6],
+        "first-212707": student[6],
+        "final-212709": student[7],
+        "first-212709": student[7],
+        "final-213607": student[8],
+        "first-213607": student[8],
+        "final-213608": student[9],
+        "first-213608": student[9],
+        "final-213701": student[10],
+        "first-213701": student[10],
+        "final-213703": student[11],
+        "first-213703": student[11],
+        "final-213705": student[12],
+        "first-213705": student[12],
+        "final-213707": student[13],
+        "first-213707": student[13]
+      };
+
+      // 2nd Year Courses (দুইবার ব্যবহার)
+      const secondYearCourses = {
+        "final-english": student[15],// Final Year section
+        "second-english": student[15],// 2nd Year section
+        "final-222707": student[16],  
+        "second-222707": student[16], 
+        "final-222708": student[17],
+        "second-222708": student[17],
+        "final-223609": student[18],
+        "second-223609": student[18],
+        "final-223610": student[19],
+        "second-223610": student[19],
+        "final-223701": student[20],
+        "second-223701": student[20],
+        "final-223703": student[21],
+        "second-223703": student[21],
+        "final-223705": student[22],
+        "second-223705": student[22],
+        "final-223706": student[23],   // Final Year section
+        "second-223706": student[23]   // 2nd Year section
+      };
+
+      // 3rd Year Courses (দুইবার ব্যবহার)
+      const thirdYearCourses = {
+        "final-233701": student[25],  // Final Year section
+        "third-233701": student[25],  // 3rd Year section
+        "final-233703": student[26],
+        "third-233703": student[26],
+        "final-233705": student[27],
+        "third-233705": student[27],
+        "final-233707": student[28],
+        "third-233707": student[28],
+        "final-233709": student[29],
+        "third-233709": student[29],
+        "final-233711": student[30],
+        "third-233711": student[30],
+        "final-233713": student[31],
+        "third-233713": student[31],
+        "final-233714": student[32],
+        "third-233714": student[32]
+      };
+
+      // 4th Year Courses (দুইবার ব্যবহার)
+      const fourthYearCourses = {
+        "final-243701": student[34],  // Final Year section
+        "fourth-243701": student[34], // 4th Year section
+        "final-243703": student[35],
+        "fourth-243703": student[35],
+        "final-243705": student[36],
+        "fourth-243705": student[36],
+        "final-243707": student[37],
+        "fourth-243707": student[37],
+        "final-243709": student[38],
+        "fourth-243709": student[38],
+        "final-243711": student[39],
+        "fourth-243711": student[39],
+        "final-243713": student[40],
+        "fourth-243713": student[40],
+        "final-243717": student[41],
+        "fourth-243717": student[41],
+        "final-243718": student[42],
+        "fourth-243718": student[42],
+        "final-243720": student[43],
+        "fourth-243720": student[43]
+      };
+
+      // GPA Data (দুইবার ব্যবহার)
+      const gpaData = {
+        "result-gpa1": student[14],   // Result section
+        "table-gpa1": student[14],    // Table section
+        "result-gpa2": student[24],
+        "table-gpa2": student[24],
+        "result-gpa3": student[33],
+        "table-gpa3": student[33],
+        "result-gpa4": student[44],
+        "table-gpa4": student[44]
+      };
+
+      // Populate Basic Info
+      Object.keys(basicInfo).forEach(id => {
+        const cell = document.getElementById(id);
         if (cell) {
+          cell.innerText = basicInfo[id] || "";
+        }
+      });
+
+      // Populate All Courses (দুইবার ডাটা সেট হবে)
+      const allCourses = {
+        ...firstYearCourses,
+        ...secondYearCourses, 
+        ...thirdYearCourses,
+        ...fourthYearCourses
+      };
+
+      Object.keys(allCourses).forEach(id => {
+        const cell = document.getElementById(id);
+        if (cell) {
+          const grade = allCourses[id] || "";
           cell.innerText = grade;
+          
+          // F grade styling
           if (grade.toUpperCase() === "F" || grade.toUpperCase() === "FAIL") {
             cell.classList.add("f-grade");
           } else {
@@ -86,6 +206,20 @@ document.getElementById("searchBtn").addEventListener("click", () => {
           }
         }
       });
+
+      // Populate GPA Data
+      Object.keys(gpaData).forEach(gpaId => {
+        const cell = document.getElementById(gpaId);
+        if (cell) {
+          const gpaValue = gpaData[gpaId] || "0.00";
+          if (gpaId.startsWith('table-')) {
+            cell.innerHTML = `<b>GPA: ${gpaValue}</b>`;
+          } else {
+            cell.innerText = gpaValue;
+          }
+        }
+      });
+
     })
     .catch(err => {
       console.error("Error fetching CSV:", err);
