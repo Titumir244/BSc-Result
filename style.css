@@ -280,6 +280,10 @@ select, button {
     color: white;
 }
 
+.tabl {
+    display: none;
+}
+
 .tabl, .tabl4 {
     position: relative;
     overflow: hidden;
@@ -418,3 +422,4 @@ select, button {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #5a6fd8 0%, #6a42a5 100%);
 }
+
