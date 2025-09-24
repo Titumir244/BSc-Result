@@ -28,41 +28,52 @@
   <hr>
   
   <!-- form -->
-  <div class="form-container">
+  <!-- form -->
+<div class="form-container">
+    <div class="form-header">
+        <h2>National University Result</h2>
+        <p>Select name and type to view detailed marksheet</p>
+    </div>
+    
     <label for="rollInput"><b>Select Name:</b></label>
     <select name="text" id="rollInput">
-      <option value="">Select Name</option>
-      <option value="21237129499">Sojib</option>
-      <option value="21237129501">Anam</option>
-      <option value="21237129502">Ferdaus</option>
-      <option value="21237129503">Ebrahim</option>
-      <option value="21237129504">Sadia</option>
-      <option value="21237129505">Ritu</option>
-      <option value="21237129508">Mim</option>
-      <option value="21237129509">Mitul</option>
-      <option value="21237129510">Mukaddesh</option>
-      <option value="21237129511">Rahima</option>
-      <option value="21237129512">Munni</option>
-      <option value="21237129513">Ismat</option>
-      <option value="21237129515">Maliha</option>
-      <option value="21237129519">Rabby</option>
-      <option value="19237144059">Mitu</option>
-    </select><br><br>
+        <option value="">Select Name</option>
+        <option value="21237129499">Sojib</option>
+        <option value="21237129501">Anam</option>
+        <option value="21237129502">Ferdaus</option>
+        <option value="21237129503">Ebrahim</option>
+        <option value="21237129504">Sadia</option>
+        <option value="21237129505">Ritu</option>
+        <option value="21237129508">Mim</option>
+        <option value="21237129509">Mitul</option>
+        <option value="21237129510">Mukaddesh</option>
+        <option value="21237129511">Rahima</option>
+        <option value="21237129512">Munni</option>
+        <option value="21237129513">Ismat</option>
+        <option value="21237129515">Maliha</option>
+        <option value="21237129519">Rabby</option>
+        <option value="19237144059">Mitu</option>
+    </select>
     
     <label for="typeInput"><b>Select Type:</b></label>
     <select name="text" id="typeInput">
-      <option value="">Select Type</option>
-      <option value="final-year">Final Result</option>
-      <option value="first-year">1st Year</option>
-      <option value="second-year">2nd Year</option>
-      <!-- <option value="third-year">3rd Year</option>
-      <option value="fourth-year">4th Year</option> -->
+        <option value="">Select Type</option>
+        <option value="final-year">Final Result</option>
+        <option value="first-year">1st Year</option>
+        <option value="second-year">2nd Year</option>
+        <!-- <option value="third-year">3rd Year</option>
+        <option value="fourth-year">4th Year</option> -->
     </select>
-    <br><br>
     
-    <button style="text-align: center;" id="searchBtn">Submit</button>
-    <button style="text-align: center;" onclick="downloadPDF('pdf')">Download</button>
-  </div>
+    <div class="button-group">
+        <button id="searchBtn">
+            <i class="fas fa-search"></i> Submit
+        </button>
+        <button onclick="downloadPDF('pdf')">
+            <i class="fas fa-download"></i> Download
+        </button>
+    </div>
+</div>
   
   <!-- Marksheet -->
   <div class="tabl4">
