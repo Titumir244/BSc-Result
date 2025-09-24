@@ -32,6 +32,7 @@ function buildTable(targetId, rows, wantedCols) {
             if (cellText === "1st") rowClass = "first";
             else if (cellText === "2nd") rowClass = "second";
             else if (cellText === "3rd") rowClass = "third";
+            else if (cellText === "Fail") rowClass = "Fail";
 
             tr.appendChild(td);
         });
@@ -39,6 +40,7 @@ function buildTable(targetId, rows, wantedCols) {
         if (rowClass === "first") tr.style.color = "#4caf50";
         else if (rowClass === "second") tr.style.color = "#2196f3";
         else if (rowClass === "third") tr.style.color = "#ff9800";
+        else if (rowClass === "Fail") tr.style.color = "#ff6666";
 
         // ==========================
         // table1-এর VIEW বাটন
@@ -152,3 +154,4 @@ function downloadPDF(pdf) {
     };
     html2pdf().set(opt).from(element).save();
 }
+
