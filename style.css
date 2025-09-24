@@ -244,40 +244,6 @@ hr {
     font-size: 18px;
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-    .navbar {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
-    
-    .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .navbar span {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 600px) {
-    .navbar ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .navbar span {
-        font-size: 20px;
-    }
-    
-    .navbar button {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
 .tab {
     width: 100%;
 }
@@ -359,6 +325,7 @@ button {
 .tabl {
     display: none;
 }
+
 
 
 
