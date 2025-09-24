@@ -1,41 +1,87 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
-    min-width: 1100px;
-    margin: auto;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 20px;
 }
+
 .navbar {
-    margin: auto;
-    padding: 10px 20px;
+    margin: 0 auto;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: bold;
     color: #333;
     width: 100%;
-    background-color: #692a051f;
+    max-width: 1200px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.navbar:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+    background-size: 400% 400%;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .navbar div {
     display: flex;
-    gap: 20px
+    gap: 20px;
+    align-items: center;
 }
 
-img {
+.navbar img {
     width: 60px;
     height: 60px;
-    border-radius: 50%
+    border-radius: 50%;
+    border: 3px solid #4ecdc4;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar img:hover {
+    transform: scale(1.1);
+    border-color: #ff6b6b;
 }
 
 .navbar span {
     display: flex;
     align-items: center;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    font-size: 26px;
 }
 
 .navbar ul {
@@ -43,56 +89,182 @@ img {
     display: flex;
     gap: 25px;
     align-items: center;
-    justify-content: center;
-    justify-content: center
 }
 
 .navbar li {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
-.navbar a,
-.navbar button {
+.navbar li a {
     text-decoration: none;
     font-size: 18px;
-    font-weight: 500;
-    color: #3c354f
+    font-weight: 600;
+    color: #3c354f;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.navbar li a:hover::before {
+    left: 100%;
+}
+
+.navbar li a:hover {
+    color: #ff42a5;
+    background-color: #f0f0f0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 .navbar button {
-    padding: 5px 20px;
-    margin: 10px 0px;
-    margin-right: 10px;
+    padding: 10px 20px;
     border: none;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-content: center
+    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.navbar button:hover::after {
+    left: 100%;
+}
+
+.navbar button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
 }
 
 .navbar button .fa-facebook {
-    margin: 5px 16px 5px 24px;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
 }
 
-
-.navbar a:hover {
-    color: #ff42a5;
-    transition: 0.3s;
-    background-color: #cecbcb;
-    padding: 10px 20px;
-    border-radius: 10%;
+.navbar button .fa-instagram {
+    margin: 0 5px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
 }
-.navbar button:hover{
-    color: #ff42a5;
-    transition: 0.3s;
-    background-color: #cecbcb;
-    border-radius: 10%;
+
+.navbar button:hover .fa-facebook,
+.navbar button:hover .fa-instagram {
+    transform: scale(1.2);
+}
+
+.navbar button a {
+    color: white;
+    padding: 0;
+    background: none;
 }
 
 .navbar button a:hover {
-    padding: 0;
+    background: none;
+    box-shadow: none;
+    transform: none;
+}
+
+hr {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1200px;
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #4ecdc4, #ff6b6b, #4ecdc4, transparent);
+    border-radius: 2px;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.content h1 {
+    color: #333;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .navbar span {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .navbar span {
+        font-size: 20px;
+    }
+    
+    .navbar button {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 .tab {
@@ -176,4 +348,5 @@ button {
 .tabl {
     display: none;
 }
+
 
