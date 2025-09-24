@@ -28,23 +28,19 @@ function buildTable(targetId, rows, wantedCols) {
                 td.style.fontWeight = "bold";
             }
 
-            let rowClass = ""; // প্রতিটি row এর জন্য শুরুতে খালি
-tr.querySelectorAll("td").forEach(td => {
-    const cellText = td.textContent.trim().toLowerCase();
-    if (cellText === "1st") rowClass = "first";
-    else if (cellText === "2nd") rowClass = "second";
-    else if (cellText === "3rd") rowClass = "third";
-    else if (cellText === "fail") rowClass = "fail"; // ছোট হাতের
-    tr.appendChild(td);
-});
+            const cellText = td.textContent.trim().toLowerCase();
+            if (cellText === "1st") rowClass = "first";
+            else if (cellText === "2nd") rowClass = "second";
+            else if (cellText === "3rd") rowClass = "third";
+            else if (cellText === "Fail") rowClass = "Fail";
 
-// রঙ নির্ধারণ
-const colorMap = {
-    first: "#4caf50",
-    second: "#2196f3",
-    third: "#ff9800",
-    fail: "#ff6666"
-};
+            tr.appendChild(td);
+        });
+
+        if (rowClass === "first") tr.style.color = "#4caf50";
+        else if (rowClass === "second") tr.style.color = "#2196f3";
+        else if (rowClass === "third") tr.style.color = "#ff9800";
+        else if (rowClass === "Fail") tr.style.color = "#ff6666";
 
 if (rowClass) {
     tr.style.color = colorMap[rowClass];
@@ -162,6 +158,7 @@ function downloadPDF(pdf) {
     };
     html2pdf().set(opt).from(element).save();
 }
+
 
 
 
