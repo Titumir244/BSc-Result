@@ -119,6 +119,74 @@ class UIManager {
             btn.disabled = false;
         }
     }
+
+    // UIManager ক্লাসে এই মেথডগুলো যোগ করুন
+class UIManager {
+    // ... existing code ...
+    
+    /**
+     * Show loading state on search button
+     */
+    static showLoading() {
+        const btn = document.getElementById("searchBtn");
+        if (btn) {
+            btn.innerHTML = '<i class="loading-spinner"></i> Loading...';
+            btn.disabled = true;
+        }
+    }
+    
+    /**
+     * Hide loading state
+     */
+    static hideLoading() {
+        const btn = document.getElementById("searchBtn");
+        if (btn) {
+            btn.innerHTML = '<i class="fas fa-search"></i> Submit';
+            btn.disabled = false;
+        }
+    }
+    
+    /**
+     * Show success state briefly
+     */
+    static showSuccess() {
+        const btn = document.getElementById("searchBtn");
+        if (btn) {
+            btn.innerHTML = '<i class="fas fa-check"></i> Success!';
+            btn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+            
+            setTimeout(() => {
+                this.hideLoading();
+            }, 1500);
+        }
+    }
+}
+
+// Main search handler এ লোডিং যোগ করুন
+static async handleSearch() {
+    const roll = document.getElementById("rollInput").value.trim();
+    const type = document.getElementById("typeInput").value.trim();
+    
+    if (!Utils.validateInputs(roll, type)) return;
+    
+    UIManager.showLoading();
+    
+    try {
+        // Hide all and show selected
+        UIManager.hideAllTypes();
+        UIManager.showType(type);
+        UIManager.showResultSection();
+        
+        // Fetch and process data
+        await this.fetchAndDisplayData(roll);
+        UIManager.showSuccess();
+        
+    } catch (error) {
+        console.error("Error:", error);
+        Utils.showError("ডাটা লোড করতে সমস্যা হয়েছে");
+        UIManager.hideLoading();
+    }
+}
 }
 
 // ==========================
@@ -395,3 +463,4 @@ function downloadPDF(pdf) {
 document.addEventListener('DOMContentLoaded', () => {
     ResultApp.init();
 });
+
