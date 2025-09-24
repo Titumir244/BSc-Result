@@ -120,7 +120,7 @@ fetch(tableSheetURL)
     .then(csvText => {
         const rows = csvText.trim().split("\n").map(r => r.split(","));
 
-        const cols1 = [1, 2, 3, 4, 6, 8, 10, 12, 14];
+        const cols1 = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16];
         const cols2 = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24];
         const cols3 = cols2;
         const cols4 = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22];
@@ -154,4 +154,5 @@ function downloadPDF(pdf) {
     };
     html2pdf().set(opt).from(element).save();
 }
+
 
