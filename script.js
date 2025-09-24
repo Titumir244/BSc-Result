@@ -1,165 +1,351 @@
 // ==========================
-// প্রথম Google Sheet URL (টেবিলের জন্য)
+// Configuration Section
 // ==========================
-const tableSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR5Ib1jaojQVFlpH0BgM2YxlYvpOxu_cLAoGwNmWlkCiD2a9Cg-MABkIpGpPLI7yQ/pub?gid=1610874522&single=true&output=csv";
-
-// ==========================
-// দ্বিতীয় Google Sheet URL (PDF এর জন্য)
-// ==========================
-const pdfSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR5Ib1jaojQVFlpH0BgM2YxlYvpOxu_cLAoGwNmWlkCiD2a9Cg-MABkIpGpPLI7yQ/pub?gid=289845772&single=true&output=csv";
-
-// ==========================
-// টেবিল তৈরি করার ফাংশন + Highlight
-// ==========================
-function buildTable(targetId, rows, wantedCols) {
-    const tbody = document.querySelector(`#${targetId} tbody`);
-    tbody.innerHTML = "";
-
-    rows.forEach((row) => {
-        const tr = document.createElement("tr");
-        let rowClass = "";
-
-        wantedCols.forEach((colIndex) => {
-            const td = document.createElement("td");
-            td.textContent = row[colIndex] || "";
-
-            if (td.textContent.trim().toUpperCase() === "F") {
-                td.style.color = "#ff6666";
-                td.style.fontWeight = "bold";
-            }
-
-            const cellText = td.textContent.trim().toLowerCase();
-            if (cellText === "1st") rowClass = "first";
-            else if (cellText === "2nd") rowClass = "second";
-            else if (cellText === "3rd") rowClass = "third";
-            else if (cellText === "fail") rowClass = "faill";
-
-            tr.appendChild(td);
-        });
-
-        if (rowClass === "first") tr.style.color = "#4caf50";
-        else if (rowClass === "second") tr.style.color = "#2196f3";
-        else if (rowClass === "third") tr.style.color = "#ff9800";
-        else if (rowClass === "fail") tr.style.color = "#ff6666";
-
-if (rowClass) {
-    tr.style.color = colorMap[rowClass];
-}
-
-        // ==========================
-        // table1-এর VIEW বাটন
-        // ==========================
-        if (targetId === "table1") {
-            const td = document.createElement("td");
-            td.textContent = "VIEW";
-            td.style.cursor = "pointer";
-            td.style.fontWeight = "bold";
-            td.style.textAlign = "center";
-            td.style.borderRadius = "4px";
-
-            td.addEventListener("click", () => {
-                const rollNumber = row[3] || ""; // তৃতীয় কলাম = roll number
-                updatePDF(rollNumber); // সরাসরি PDF আপডেট
-                // CSS পরিবর্তন: টেবিল লুকানো, PDF দেখানো
-                const tabSection = document.querySelector(".tab");
-                const pdfSection = document.querySelector(".tabl");
-                if (tabSection) tabSection.style.display = "none";
-                if (pdfSection) pdfSection.style.display = "block";
-            });
-
-            tr.appendChild(td);
-        }
-
-        tbody.appendChild(tr);
-    });
-}
-
-// ==========================
-// PDF আপডেট করার ফাংশন
-// ==========================
-function updatePDF(roll) {
-    fetch(pdfSheetURL)
-        .then(res => res.text())
-        .then(text => {
-            const rows = text.trim().split("\n").map(r => r.split(","));
-            // ধরুন Header আছে rows[0], রোল B কলাম index 0?
-            const header = rows[0];
-            const dataRows = rows.slice(1);
-
-            // ধরুন রোল নাম্বার প্রথম কলাম
-            const student = dataRows.find(r => r[3] === roll);
-
-            if (!student) {
-                alert("রোল নম্বর পাওয়া যায়নি");
-                return;
-            }
-
-            // কোর্স কোড তালিকা — আপনার সঠিক কোর্স আইডি গুলো
-            const courseIds = ["name", "father", "mother", "regi", "cgpa", "211501", "212707", "212709", "213607", "213608", "213701", "213703", "213705", "213707", "gpa1", "english", "222707", "222708", "223609", "223610", "223701", "223703", "223705", "223706", "gpa2", "233701", "233703", "233705", "233707", "233709", "233711", "233713", "233714", "gpa3", "243701", "243703", "243705", "243707", "243709", "243711", "243713", "243717", "243718", "243720", "gpa4"]; // আপনার সলে যুক্ত করুন
-
-            courseIds.forEach((code, idx) => {
-                const grade = student[0 + idx] || "";
-                const cell = document.getElementById(code);
-                if (cell) {
-                    cell.innerText = grade;
-                    if (grade.toUpperCase() === "F") {
-                        cell.classList.add("f-grade");
-                    } else {
-                        cell.classList.remove("f-grade");
-                    }
-                }
-            });
-        })
-        .catch(err => {
-            console.error("Error fetching CSV:", err);
-            alert("ডাটা লোড করতে সমস্যা হয়েছে");
-        });
+const CONFIG = {
+    tableSheetURL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR5Ib1jaojQVFlpH0BgM2YxlYvpOxu_cLAoGwNmWlkCiD2a9Cg-MABkIpGpPLI7yQ/pub?gid=1610874522&single=true&output=csv",
+    pdfSheetURL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR5Ib1jaojQVFlpH0BgM2YxlYvpOxu_cLAoGwNmWlkCiD2a9Cg-MABkIpGpPLI7yQ/pub?gid=289845772&single=true&output=csv",
+    
+    // Color mapping for different grades
+    colorMap: {
+        first: "#4caf50",
+        second: "#2196f3",
+        third: "#ff9800",
+        fail: "#ff6666"
+    },
+    
+    // Table configurations
+    tableConfigs: {
+        table1: { startRow: 4, endRow: 19, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16] },
+        table2: { startRow: 24, endRow: 39, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24] },
+        table3: { startRow: 44, endRow: 59, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24] },
+        table4: { startRow: 64, endRow: 79, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22] },
+        table5: { startRow: 84, endRow: 99, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24] }
+    },
+    
+    // Course IDs for PDF generation
+    courseIds: [
+        "name", "father", "mother", "regi", "cgpa", "211501", "212707", "212709", 
+        "213607", "213608", "213701", "213703", "213705", "213707", "gpa1", "english", 
+        "222707", "222708", "223609", "223610", "223701", "223703", "223705", "223706", 
+        "gpa2", "233701", "233703", "233705", "233707", "233709", "233711", "233713", 
+        "233714", "gpa3", "243701", "243703", "243705", "243707", "243709", "243711", 
+        "243713", "243717", "243718", "243720", "gpa4"
+    ]
 };
 
 // ==========================
-// প্রথম Sheet থেকে টেবিল লোড
+// Utility Functions
 // ==========================
-fetch(tableSheetURL)
-    .then(res => res.text())
-    .then(csvText => {
-        const rows = csvText.trim().split("\n").map(r => r.split(","));
-
-        const cols1 = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16];
-        const cols2 = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24];
-        const cols3 = cols2;
-        const cols4 = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22];
-        const cols5 = cols2;
-
-        const table1Rows = rows.slice(4, 19);
-        const table2Rows = rows.slice(24, 39);
-        const table3Rows = rows.slice(44, 59);
-        const table4Rows = rows.slice(64, 79);
-        const table5Rows = rows.slice(84, 99);
-
-        buildTable("table1", table1Rows, cols1);
-        buildTable("table2", table2Rows, cols2);
-        buildTable("table3", table3Rows, cols3);
-        buildTable("table4", table4Rows, cols4);
-        buildTable("table5", table5Rows, cols5);
-    })
-    .catch(err => console.error("Error loading table sheet:", err));
-
-// ==========================
-// PDF Download
-// ==========================
-function downloadPDF(pdf) {
-    let element = document.getElementById(pdf);
-    let opt = {
-        margin: [15, 0, 15, 15],
-        filename: 'Result.pdf',
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'px', format: [810, 860], orientation: 'landscape' }
-    };
-    html2pdf().set(opt).from(element).save();
+class Utils {
+    /**
+     * Parse CSV text into array of rows
+     * @param {string} csvText - CSV content as string
+     * @returns {Array} Array of rows
+     */
+    static parseCSV(csvText) {
+        return csvText.trim().split("\n").map(row => row.split(","));
+    }
+    
+    /**
+     * Show error message to user
+     * @param {string} message - Error message
+     */
+    static showError(message) {
+        console.error(message);
+        alert(message);
+    }
+    
+    /**
+     * Validate required parameters
+     * @param {*} params - Parameters to validate
+     * @returns {boolean} True if valid
+     */
+    static validateParams(...params) {
+        return params.every(param => param !== undefined && param !== null);
+    }
 }
 
+// ==========================
+// Table Builder Class
+// ==========================
+class TableBuilder {
+    /**
+     * Build table with specified configuration
+     * @param {string} targetId - ID of the target table element
+     * @param {Array} rows - Data rows
+     * @param {Array} wantedCols - Column indices to include
+     */
+    static buildTable(targetId, rows, wantedCols) {
+        if (!Utils.validateParams(targetId, rows, wantedCols)) {
+            Utils.showError("Invalid parameters for table building");
+            return;
+        }
+        
+        const tbody = document.querySelector(`#${targetId} tbody`);
+        if (!tbody) {
+            Utils.showError(`Table body not found for ID: ${targetId}`);
+            return;
+        }
+        
+        tbody.innerHTML = "";
+        
+        rows.forEach((row) => {
+            const tr = this.createTableRow(row, wantedCols, targetId);
+            tbody.appendChild(tr);
+        });
+    }
+    
+    /**
+     * Create a single table row
+     * @param {Array} row - Row data
+     * @param {Array} wantedCols - Column indices to include
+     * @param {string} targetId - Target table ID
+     * @returns {HTMLElement} Table row element
+     */
+    static createTableRow(row, wantedCols, targetId) {
+        const tr = document.createElement("tr");
+        let rowClass = "";
+        
+        // Create data cells
+        wantedCols.forEach((colIndex) => {
+            const td = this.createTableCell(row, colIndex);
+            
+            // Determine row class based on cell content
+            rowClass = this.determineRowClass(td.textContent, rowClass);
+            
+            tr.appendChild(td);
+        });
+        
+        // Apply row styling
+        this.applyRowStyling(tr, rowClass);
+        
+        // Add VIEW button for table1
+        if (targetId === "table1") {
+            const viewButtonCell = this.createViewButtonCell(row);
+            tr.appendChild(viewButtonCell);
+        }
+        
+        return tr;
+    }
+    
+    /**
+     * Create a table cell with content
+     * @param {Array} row - Row data
+     * @param {number} colIndex - Column index
+     * @returns {HTMLElement} Table cell element
+     */
+    static createTableCell(row, colIndex) {
+        const td = document.createElement("td");
+        const cellContent = row[colIndex] || "";
+        td.textContent = cellContent;
+        
+        // Highlight "F" grades
+        if (cellContent.trim().toUpperCase() === "F") {
+            td.style.color = "#ff6666";
+            td.style.fontWeight = "bold";
+        }
+        
+        return td;
+    }
+    
+    /**
+     * Determine row class based on cell content
+     * @param {string} cellText - Cell text content
+     * @param {string} currentClass - Current row class
+     * @returns {string} Updated row class
+     */
+    static determineRowClass(cellText, currentClass) {
+        const text = cellText.trim().toLowerCase();
+        
+        if (text === "1st") return "first";
+        if (text === "2nd") return "second";
+        if (text === "3rd") return "third";
+        if (text === "fail") return "fail";
+        
+        return currentClass;
+    }
+    
+    /**
+     * Apply styling to table row based on class
+     * @param {HTMLElement} tr - Table row element
+     * @param {string} rowClass - Row class name
+     */
+    static applyRowStyling(tr, rowClass) {
+        if (rowClass && CONFIG.colorMap[rowClass]) {
+            tr.style.color = CONFIG.colorMap[rowClass];
+        }
+    }
+    
+    /**
+     * Create VIEW button cell for table1
+     * @param {Array} row - Row data
+     * @returns {HTMLElement} Table cell with VIEW button
+     */
+    static createViewButtonCell(row) {
+        const td = document.createElement("td");
+        td.textContent = "VIEW";
+        td.className = "view-button";
+        
+        td.addEventListener("click", () => {
+            const rollNumber = row[3] || "";
+            PDFManager.updatePDF(rollNumber);
+            UIManager.showPDFSection();
+        });
+        
+        return td;
+    }
+}
 
+// ==========================
+// PDF Manager Class
+// ==========================
+class PDFManager {
+    /**
+     * Update PDF section with student data
+     * @param {string} roll - Roll number
+     */
+    static async updatePDF(roll) {
+        try {
+            const response = await fetch(CONFIG.pdfSheetURL);
+            const text = await response.text();
+            const rows = Utils.parseCSV(text);
+            
+            const student = this.findStudentByRoll(rows, roll);
+            if (!student) {
+                Utils.showError("রোল নম্বর পাওয়া যায়নি");
+                return;
+            }
+            
+            this.populatePDFFields(student);
+        } catch (error) {
+            console.error("Error fetching PDF data:", error);
+            Utils.showError("ডাটা লোড করতে সমস্যা হয়েছে");
+        }
+    }
+    
+    /**
+     * Find student by roll number
+     * @param {Array} rows - All data rows
+     * @param {string} roll - Roll number to find
+     * @returns {Array|null} Student data or null if not found
+     */
+    static findStudentByRoll(rows, roll) {
+        const dataRows = rows.slice(1); // Skip header
+        return dataRows.find(row => row[3] === roll) || null;
+    }
+    
+    /**
+     * Populate PDF fields with student data
+     * @param {Array} student - Student data
+     */
+    static populatePDFFields(student) {
+        CONFIG.courseIds.forEach((code, idx) => {
+            const grade = student[idx] || "";
+            const cell = document.getElementById(code);
+            
+            if (cell) {
+                cell.textContent = grade;
+                
+                if (grade.toUpperCase() === "F") {
+                    cell.classList.add("f-grade");
+                } else {
+                    cell.classList.remove("f-grade");
+                }
+            }
+        });
+    }
+    
+    /**
+     * Download PDF
+     * @param {string} pdfElementId - ID of the PDF element
+     */
+    static downloadPDF(pdfElementId) {
+        const element = document.getElementById(pdfElementId);
+        if (!element) {
+            Utils.showError("PDF element not found");
+            return;
+        }
+        
+        const options = {
+            margin: [15, 0, 15, 15],
+            filename: 'Result.pdf',
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'px', format: [810, 860], orientation: 'landscape' }
+        };
+        
+        html2pdf().set(options).from(element).save();
+    }
+}
 
+// ==========================
+// UI Manager Class
+// ==========================
+class UIManager {
+    /**
+     * Show PDF section and hide table section
+     */
+    static showPDFSection() {
+        const tabSection = document.querySelector(".tab");
+        const pdfSection = document.querySelector(".tabl");
+        
+        if (tabSection) tabSection.style.display = "none";
+        if (pdfSection) pdfSection.style.display = "block";
+    }
+    
+    /**
+     * Show table section and hide PDF section
+     */
+    static showTableSection() {
+        const tabSection = document.querySelector(".tab");
+        const pdfSection = document.querySelector(".tabl");
+        
+        if (tabSection) tabSection.style.display = "block";
+        if (pdfSection) pdfSection.style.display = "none";
+    }
+}
 
+// ==========================
+// Data Loader Class
+// ==========================
+class DataLoader {
+    /**
+     * Load and process table data
+     */
+    static async loadTableData() {
+        try {
+            const response = await fetch(CONFIG.tableSheetURL);
+            const csvText = await response.text();
+            const rows = Utils.parseCSV(csvText);
+            
+            this.buildAllTables(rows);
+        } catch (error) {
+            console.error("Error loading table data:", error);
+            Utils.showError("টেবিল ডাটা লোড করতে সমস্যা হয়েছে");
+        }
+    }
+    
+    /**
+     * Build all tables from data
+     * @param {Array} rows - All data rows
+     */
+    static buildAllTables(rows) {
+        Object.keys(CONFIG.tableConfigs).forEach(tableId => {
+            const config = CONFIG.tableConfigs[tableId];
+            const tableRows = rows.slice(config.startRow, config.endRow);
+            TableBuilder.buildTable(tableId, tableRows, config.columns);
+        });
+    }
+}
 
+// ==========================
+// Initialize Application
+// ==========================
+document.addEventListener('DOMContentLoaded', () => {
+    DataLoader.loadTableData();
+});
+
+// ==========================
+// Global Functions (for HTML onclick)
+// ==========================
+window.downloadPDF = PDFManager.downloadPDF;
