@@ -41,7 +41,7 @@ body {
     gap: 15px;
 }
 
-.navber img {
+.logo img {
     height: 60px;
     width: auto;
     border-radius: 8px;
@@ -535,4 +535,5 @@ select, button {
     white-space: nowrap;
     pointer-events: none;
 }
+
 
