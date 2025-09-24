@@ -45,7 +45,7 @@ body {
 .navbar .logo img {
     height: 60px;
     width: auto;
-    border-radius: 8px;
+    border-radius: 50%;
     box-shadow: var(--shadow-light);
 }
 
@@ -568,6 +568,7 @@ select, button {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #5a6fd8 0%, #6a42a5 100%);
 }
+
 
 
 
