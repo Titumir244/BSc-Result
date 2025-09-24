@@ -220,7 +220,10 @@ hr {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-#table1 h1 {
+#table1 h1,
+#table2 h1,
+#table3 h1,
+#table4 h1 {
     color: #333;
     margin-bottom: 20px;
     background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
@@ -229,7 +232,10 @@ hr {
     color: transparent;
 }
 
-#table1 p {
+#table1 p,
+#table2 p,
+#table3 p,
+#table4 p {
     color: #666;
     line-height: 1.6;
     font-size: 18px;
@@ -350,6 +356,7 @@ button {
 .tabl {
     display: none;
 }
+
 
 
 
