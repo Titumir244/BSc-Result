@@ -22,6 +22,7 @@ body {
     line-height: 1.6;
     color: #333;
     background: #f8f9fa;
+    min-width: 1200px;
 }
 
 /* ===== NAVBAR STYLING - আপনার HTML অনুযায়ী ===== */
@@ -139,7 +140,6 @@ hr {
 
 /* ===== TABLE CONTAINERS ===== */
 #table1, #table2, #table3, #table4 {
-    max-width: 1200px;
     margin: 2rem auto;
     padding: 2rem;
     background: white;
@@ -190,7 +190,7 @@ hr {
 
 .tab th, .tab td {
     border: 1px solid #ddd;
-    padding: 12px 15px;
+    padding: 12px 0;
     text-align: center;
     transition: var(--transition);
 }
@@ -568,5 +568,6 @@ select, button {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #5a6fd8 0%, #6a42a5 100%);
 }
+
 
 
