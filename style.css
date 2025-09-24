@@ -24,12 +24,40 @@ body {
     background: #f8f9fa;
 }
 
-/* ===== NAVBAR STYLING ===== */
-.navbar {
+/* ===== HEADER & NAVBAR STYLING ===== */
+.header {
     background: var(--primary-gradient);
     padding: 1rem 2rem;
     box-shadow: var(--shadow-medium);
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+}
+
+.logo-text {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.navbar {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 .navbar button {
@@ -313,20 +341,34 @@ hr {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    .navbar {
+    .header {
         padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
         text-align: center;
     }
     
-    .navbar button {
-        width: 100%;
-        margin-bottom: 0.5rem;
+    .logo img {
+        height: 50px;
+    }
+    
+    .navbar {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .navbar button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
     
     #table1, #table2, #table3, #table4 {
         margin: 1rem;
         padding: 1.5rem;
+    }
+    
+    #table1 h1, #table2 h1, #table3 h1, #table4 h1 {
+        font-size: 1.5rem;
     }
     
     .form-container {
@@ -353,8 +395,16 @@ hr {
 }
 
 @media (max-width: 480px) {
+    .logo img {
+        height: 40px;
+    }
+    
+    .logo-text {
+        font-size: 1.4rem;
+    }
+    
     #table1 h1, #table2 h1, #table3 h1, #table4 h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .form-header h2 {
@@ -363,6 +413,11 @@ hr {
     
     .tab table::after {
         font-size: 1.5rem;
+    }
+    
+    .tab th, .tab td {
+        padding: 6px 8px;
+        font-size: 0.8rem;
     }
 }
 
@@ -393,4 +448,90 @@ hr {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #5a6fd8 0%, #6a42a5 100%);
+}
+
+/* ===== EXISTING STYLES PRESERVED ===== */
+.navbar button .fa-facebook {
+    margin: 0 10px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.navbar button .fa-instagram {
+    margin: 0 5px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.navbar button a {
+    color: white;
+    padding: 0;
+    background: none;
+}
+
+.navbar button a:hover {
+    background: none;
+    box-shadow: none;
+    transform: none;
+}
+
+.tble {
+    margin: 10px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: .2px;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 20px;
+}
+
+.style4 {
+    font-size: 12px;
+}
+
+select, button {
+    padding: 6px 10px;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #C0C0C0;
+    padding: 2px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tabl, .tabl4 {
+    position: relative;
+    overflow: hidden;
+}
+
+.tabl::after, .tabl4::after {
+    content: "© Ferdaus Alam";
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 60px;
+    color: rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+    pointer-events: none;
 }
