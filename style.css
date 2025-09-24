@@ -230,7 +230,6 @@ hr {
     background-clip: text;
     color: transparent;
     align-items: center;
-    display: flex;
 }
 
 #table1 p,
@@ -323,6 +322,7 @@ button {
 .tabl {
     display: none;
 }
+
 
 
 
