@@ -154,7 +154,7 @@ button {
     font-weight: bold;
 }
 .tab table::after {
-  content: "© Md Ferdaus Alam";
+  content: "© Ferdaus Alam";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -176,3 +176,4 @@ button {
 .tabl {
     display: none;
 }
+
