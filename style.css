@@ -25,7 +25,7 @@ body {
 }
 
 /* ===== HEADER & NAVBAR STYLING ===== */
-.header {
+.navber {
     background: var(--primary-gradient);
     padding: 1rem 2rem;
     box-shadow: var(--shadow-medium);
@@ -41,7 +41,7 @@ body {
     gap: 15px;
 }
 
-.logo img {
+.navber img {
     height: 60px;
     width: auto;
     border-radius: 8px;
@@ -535,3 +535,4 @@ select, button {
     white-space: nowrap;
     pointer-events: none;
 }
+
