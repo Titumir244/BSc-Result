@@ -29,7 +29,7 @@
 
 .tabl::after,
 .tabl4::after {
-  content: "© Md Ferdaus Alam";
+  content: "© Ferdaus Alam";
   position: absolute;
   top: 41%;
   left: 50%;
@@ -50,6 +50,7 @@
   margin: 30px;
   text-align: center;
 }
+
 
 
 
