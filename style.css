@@ -231,6 +231,7 @@ hr {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    align-items: center;
 }
 
 #table1 p,
@@ -357,6 +358,7 @@ button {
 .tabl {
     display: none;
 }
+
 
 
 
