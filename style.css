@@ -154,7 +154,6 @@ hr {
 }
 
 #table1 h1, #table2 h1, #table3 h1, #table4 h1 {
-    margin-bottom: 1.5rem;
     background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
     -webkit-background-clip: text;
     background-clip: text;
@@ -568,6 +567,7 @@ select, button {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #5a6fd8 0%, #6a42a5 100%);
 }
+
 
 
 
