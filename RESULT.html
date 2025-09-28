@@ -5,15 +5,15 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>NU Hon's Consolidated Result</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
   <section class="navbar">
     <div class="logo">
-      <img src="./RESULT_files/IMG_20250923_075641.jpg" alt="">
-      <span>Md Ferdaus Alam</span>
+      <a href="./index.html"><img src="./image/logo.jpg" alt=""></a>
+      <a href="./index.html">Md Ferdaus Alam</a>
     </div>
     <ul>
       <li><a href="./index.html">Result Sheet</a></li>
@@ -25,55 +25,55 @@
     </ul>
   </section>
   <hr>
-  
+
   <!-- form -->
-  <!-- form -->
-<div class="form-container">
+  <div class="form-container">
     <div class="form-header">
-        <h2>National University Result</h2>
-        <p>Select name and type to view detailed marksheet</p>
+      <img src="./image/NULOGO.jpg" alt="">
+      <h2>National University Result</h2>
+      <p>Select name and type to view detailed marksheet</p>
     </div>
-    
+
     <label for="rollInput"><b>Select Name:</b></label>
     <select name="text" id="rollInput">
-        <option value="">Select Name</option>
-        <option value="21237129499">Sojib</option>
-        <option value="21237129501">Anam</option>
-        <option value="21237129502">Ferdaus</option>
-        <option value="21237129503">Ebrahim</option>
-        <option value="21237129504">Sadia</option>
-        <option value="21237129505">Ritu</option>
-        <option value="21237129508">Mim</option>
-        <option value="21237129509">Mitul</option>
-        <option value="21237129510">Mukaddesh</option>
-        <option value="21237129511">Rahima</option>
-        <option value="21237129512">Munni</option>
-        <option value="21237129513">Ismat</option>
-        <option value="21237129515">Maliha</option>
-        <option value="21237129517">Rabby</option>
-        <option value="19237144059">Mitu</option>
+      <option value="">Select Name</option>
+      <option value="21237129499">Sojib</option>
+      <option value="21237129501">Anam</option>
+      <option value="21237129502">Ferdaus</option>
+      <option value="21237129503">Ebrahim</option>
+      <option value="21237129504">Sadia</option>
+      <option value="21237129505">Ritu</option>
+      <option value="21237129508">Mim</option>
+      <option value="21237129509">Mitul</option>
+      <option value="21237129510">Mukaddesh</option>
+      <option value="21237129511">Rahima</option>
+      <option value="21237129512">Munni</option>
+      <option value="21237129513">Ismat</option>
+      <option value="21237129515">Maliha</option>
+      <option value="21237129517">Rabby</option>
+      <option value="19237144059">Mitu</option>
     </select>
-    
+
     <label for="typeInput"><b>Select Type:</b></label>
     <select name="text" id="typeInput">
-        <option value="">Select Type</option>
-        <option value="final-year">Final Result</option>
-        <option value="first-year">1st Year</option>
-        <option value="second-year">2nd Year</option>
-        <!-- <option value="third-year">3rd Year</option>
+      <option value="">Select Type</option>
+      <option value="final-year">Final Result</option>
+      <option value="first-year">1st Year</option>
+      <option value="second-year">2nd Year</option>
+      <!-- <option value="third-year">3rd Year</option>
         <option value="fourth-year">4th Year</option> -->
     </select>
-    
+
     <div class="button-group">
-        <button id="searchBtn">
-            <i class="fas fa-search"></i> Submit
-        </button>
-        <button onclick="downloadPDF('pdf')">
-            <i class="fas fa-download"></i> Download
-        </button>
+      <button id="searchBtn">
+        <i class="fas fa-search"></i> Submit
+      </button>
+      <button onclick="downloadPDF('pdf')">
+        <i class="fas fa-download"></i> Download
+      </button>
     </div>
-</div>
-  
+  </div>
+
   <!-- Marksheet -->
   <div class="tabl4">
     <table id="pdf" width="760" border="0" align="center" cellpadding="1" cellspacing="1" class="tble">
@@ -85,7 +85,7 @@
                 <tr>
                   <td width="3" align="center">&nbsp;</td>
                   <td width="65" rowspan="2" align="center">
-                    <img src="./RESULT_files/NULOGO.jpg" alt="nu logo" border="0" height="65" width="auto">
+                    <img src="./image/NULOGO.jpg" alt="nu logo" border="0" height="65" width="auto">
                   </td>
                   <td width="614" align="center">
                     <font size="+2">National University, Bangladesh</font>
@@ -104,7 +104,7 @@
               </tbody>
             </table>
             <br>
-            
+
             <center>
               <strong>
                 <font color="#000000" size="3">
@@ -113,7 +113,7 @@
               </strong>
             </center>
             <br>
-            
+
             <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="customers">
               <tbody>
                 <tr bgcolor="#FFFFFF">
@@ -135,12 +135,12 @@
                   <td align="left">Name of College</td>
                   <td colspan="4">[2538] PADMA GOVT. COLLEGE, RAJSHAHI</td>
                 </tr>
-                
+
                 <tr bgcolor="#FFFFFF">
                   <td align="left">Registration No</td>
                   <td id="regi" colspan="4"></td>
                 </tr>
-                
+
                 <tr bgcolor="#FFFFFF">
                   <td align="left">Session</td>
                   <td colspan="4">2021-22</td>
@@ -164,7 +164,7 @@
               </tbody>
             </table>
             <br>
-            
+
             <!-- Final Year Section -->
             <section class="final-year">
               <center>
@@ -237,7 +237,7 @@
                         </tbody>
                       </table>
                     </td>
-                    
+
                     <!-- 2nd Year Results -->
                     <td valign="top">
                       <table border="0" width="100%" cellpadding="5" cellspacing="0">
@@ -284,7 +284,7 @@
                         </tbody>
                       </table>
                     </td>
-                    
+
                     <!-- 3rd Year Results -->
                     <td valign="top">
                       <table border="0" width="100%" cellpadding="5" cellspacing="0">
@@ -328,7 +328,7 @@
                         </tbody>
                       </table>
                     </td>
-                    
+
                     <!-- 4th Year Results -->
                     <td valign="top">
                       <table border="0" width="100%" cellpadding="5" cellspacing="0">
@@ -381,7 +381,7 @@
                       </table>
                     </td>
                   </tr>
-                  
+
                   <tr align="center">
                     <td id="table-gpa1" style="font-size: 13px"><b>GPA: 0.00</b></td>
                     <td id="table-gpa2" style="font-size: 13px"><b>GPA: 0.00</b></td>
@@ -402,73 +402,153 @@
                     </td>
                   </tr>
                   <tr align="center" bgcolor="#FFFFFF">
-                    <td><font color="#000000">Course Code</font></td>
-                    <td><font color="#000000">Course Title</font></td>
-                    <td><font color="#000000">Credit</font></td>
-                    <td><font color="#000000">Letter Grade</font></td>
+                    <td>
+                      <font color="#000000">Course Code</font>
+                    </td>
+                    <td>
+                      <font color="#000000">Course Title</font>
+                    </td>
+                    <td>
+                      <font color="#000000">Credit</font>
+                    </td>
+                    <td>
+                      <font color="#000000">Letter Grade</font>
+                    </td>
                   </tr>
-                  
+
                   <tr bgcolor="#FFFFFF">
-                    <td width="76" align="center"><font size="2">211501</font></td>
-                    <td width="287"><font size="2">HISTORY OF THE EMERGENCE OF INDEPENDENT BANGLADESH</font></td>
-                    <td width="99" align="center"><font size="2">4</font></td>
-                    <td width="131" align="center" id="first-211501"><font size="2"></font></td>
+                    <td width="76" align="center">
+                      <font size="2">211501</font>
+                    </td>
+                    <td width="287">
+                      <font size="2">HISTORY OF THE EMERGENCE OF INDEPENDENT BANGLADESH</font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="131" align="center" id="first-211501">
+                      <font size="2"></font>
+                    </td>
                   </tr>
-                  
+
                   <tr bgcolor="#FFFFFF">
-                    <td width="76" align="center"><font size="2">212707</font></td>
-                    <td width="287"><font size="2">PHYSICS-I (MECHANICS, PROPERTIES OF MATTER, WAVES &amp; OPTICS)</font></td>
-                    <td width="99" align="center"><font size="2">4</font></td>
-                    <td width="131" align="center" id="first-212707"><font size="2"></font></td>
+                    <td width="76" align="center">
+                      <font size="2">212707</font>
+                    </td>
+                    <td width="287">
+                      <font size="2">PHYSICS-I (MECHANICS, PROPERTIES OF MATTER, WAVES &amp; OPTICS)</font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="131" align="center" id="first-212707">
+                      <font size="2"></font>
+                    </td>
                   </tr>
-                  
+
                   <tr bgcolor="#FFFFFF">
-                    <td width="76" align="center"><font size="2">212709</font></td>
-                    <td width="287"><font size="2">PHYSICS-II (HEAT, THERMODYNAMICS AND RADIATION)</font></td>
-                    <td width="99" align="center"><font size="2">2</font></td>
-                    <td width="131" align="center" id="first-212709"><font size="2"></font></td>
+                    <td width="76" align="center">
+                      <font size="2">212709</font>
+                    </td>
+                    <td width="287">
+                      <font size="2">PHYSICS-II (HEAT, THERMODYNAMICS AND RADIATION)</font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">2</font>
+                    </td>
+                    <td width="131" align="center" id="first-212709">
+                      <font size="2"></font>
+                    </td>
                   </tr>
-                  
+
                   <tr bgcolor="#FFFFFF">
-                    <td width="76" align="center"><font size="2">213607</font></td>
-                    <td width="287"><font size="2">INTRODUCTION TO STATISTICS</font></td>
-                    <td width="99" align="center"><font size="2">4</font></td>
-                    <td width="131" align="center" id="first-213607"><font size="2"></font></td>
+                    <td width="76" align="center">
+                      <font size="2">213607</font>
+                    </td>
+                    <td width="287">
+                      <font size="2">INTRODUCTION TO STATISTICS</font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="131" align="center" id="first-213607">
+                      <font size="2"></font>
+                    </td>
                   </tr>
-                  
+
                   <tr bgcolor="#FFFFFF">
-                    <td width="76" align="center"><font size="2">213608</font></td>
-                    <td width="287"><font size="2">STATISTICS PRACTICAL-I</font></td>
-                    <td width="99" align="center"><font size="2">2</font></td>
-                    <td width="131" align="center" id="first-213608"><font size="2"></font></td>
+                    <td width="76" align="center">
+                      <font size="2">213608</font>
+                    </td>
+                    <td width="287">
+                      <font size="2">STATISTICS PRACTICAL-I</font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">2</font>
+                    </td>
+                    <td width="131" align="center" id="first-213608">
+                      <font size="2"></font>
+                    </td>
                   </tr>
-                  
+
                   <tr bgcolor="#FFFFFF">
-                    <td width="76" align="center"><font size="2">213701</font></td>
-                    <td width="287"><font size="2">FUNDAMENTALS OF MATHEMATICS</font></td>
-                    <td width="99" align="center"><font size="2">3</font></td>
-                    <td width="131" align="center" id="first-213701"><font size="2"></font></td>
+                    <td width="76" align="center">
+                      <font size="2">213701</font>
+                    </td>
+                    <td width="287">
+                      <font size="2">FUNDAMENTALS OF MATHEMATICS</font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">3</font>
+                    </td>
+                    <td width="131" align="center" id="first-213701">
+                      <font size="2"></font>
+                    </td>
                   </tr>
-                  
+
                   <tr bgcolor="#FFFFFF">
-                    <td width="76" align="center"><font size="2">213703</font></td>
-                    <td width="287"><font size="2">CALCULUS - I</font></td>
-                    <td width="99" align="center"><font size="2">3</font></td>
-                    <td width="131" align="center" id="first-213703"><font size="2"></font></td>
+                    <td width="76" align="center">
+                      <font size="2">213703</font>
+                    </td>
+                    <td width="287">
+                      <font size="2">CALCULUS - I</font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">3</font>
+                    </td>
+                    <td width="131" align="center" id="first-213703">
+                      <font size="2"></font>
+                    </td>
                   </tr>
-                  
+
                   <tr bgcolor="#FFFFFF">
-                    <td width="76" align="center"><font size="2">213705</font></td>
-                    <td width="287"><font size="2">LINEAR ALGEBRA</font></td>
-                    <td width="99" align="center"><font size="2">3</font></td>
-                    <td width="131" align="center" id="first-213705"><font size="2"></font></td>
+                    <td width="76" align="center">
+                      <font size="2">213705</font>
+                    </td>
+                    <td width="287">
+                      <font size="2">LINEAR ALGEBRA</font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">3</font>
+                    </td>
+                    <td width="131" align="center" id="first-213705">
+                      <font size="2"></font>
+                    </td>
                   </tr>
-                  
+
                   <tr bgcolor="#FFFFFF">
-                    <td width="76" align="center"><font size="2">213707</font></td>
-                    <td width="287"><font size="2">ANALYTIC AND VECTOR GEOMETRY</font></td>
-                    <td width="99" align="center"><font size="2">3</font></td>
-                    <td width="131" align="center" id="first-213707"><font size="2"></font></td>
+                    <td width="76" align="center">
+                      <font size="2">213707</font>
+                    </td>
+                    <td width="287">
+                      <font size="2">ANALYTIC AND VECTOR GEOMETRY</font>
+                    </td>
+                    <td width="99" align="center">
+                      <font size="2">3</font>
+                    </td>
+                    <td width="131" align="center" id="first-213707">
+                      <font size="2"></font>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -484,73 +564,153 @@
                     </td>
                   </tr>
                   <tr align="center">
-                    <td><font size="2"><strong>Course Code</strong></font></td>
-                    <td><font size="2"><strong>Course Title</strong></font></td>
-                    <td><font color="#000000">Credit</font></td>
-                    <td><font color="#000000">Letter Grade</font></td>
+                    <td>
+                      <font size="2"><strong>Course Code</strong></font>
+                    </td>
+                    <td>
+                      <font size="2"><strong>Course Title</strong></font>
+                    </td>
+                    <td>
+                      <font color="#000000">Credit</font>
+                    </td>
+                    <td>
+                      <font color="#000000">Letter Grade</font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">221109</font></td>
-                    <td width="281"><font size="2">ENGLISH (COMPULSORY)</font></td>
-                    <td width="108" align="center"><font size="2">0</font></td>
-                    <td width="91" align="center" id="second-english"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">221109</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">ENGLISH (COMPULSORY)</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">0</font>
+                    </td>
+                    <td width="91" align="center" id="second-english">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">222707</font></td>
-                    <td width="281"><font size="2">PHYSICS-III (ELECTRICITY AND MODERN PHYSICS)</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="second-222707"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">222707</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">PHYSICS-III (ELECTRICITY AND MODERN PHYSICS)</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="second-222707">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">222708</font></td>
-                    <td width="281"><font size="2">PHYSICS-IV (PHYSICS PRACTICAL)</font></td>
-                    <td width="108" align="center"><font size="2">2</font></td>
-                    <td width="91" align="center" id="second-222708"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">222708</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">PHYSICS-IV (PHYSICS PRACTICAL)</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">2</font>
+                    </td>
+                    <td width="91" align="center" id="second-222708">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">223609</font></td>
-                    <td width="281"><font size="2">METHODS OF STATISTICS</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="second-223609"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">223609</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">METHODS OF STATISTICS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="second-223609">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">223610</font></td>
-                    <td width="281"><font size="2">STATISTICS PRACTICAL-II</font></td>
-                    <td width="108" align="center"><font size="2">2</font></td>
-                    <td width="91" align="center" id="second-223610"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">223610</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">STATISTICS PRACTICAL-II</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">2</font>
+                    </td>
+                    <td width="91" align="center" id="second-223610">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">223701</font></td>
-                    <td width="281"><font size="2">CALCULUS- II</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="second-223701"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">223701</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">CALCULUS- II</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="second-223701">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">223703</font></td>
-                    <td width="281"><font size="2">ORDINARY DIFFERENTIAL EQUATIONS</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="second-223703"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">223703</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">ORDINARY DIFFERENTIAL EQUATIONS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="second-223703">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">223705</font></td>
-                    <td width="281"><font size="2">COMPUTER PROGRAMMING (FORTRAN)</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="second-223705"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">223705</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">COMPUTER PROGRAMMING (FORTRAN)</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="second-223705">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">223706</font></td>
-                    <td width="281"><font size="2">MATH LAB (PRACTICAL)</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="second-223706"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">223706</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">MATH LAB (PRACTICAL)</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="second-223706">
+                      <font size="2"></font>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -566,66 +726,138 @@
                     </td>
                   </tr>
                   <tr align="center">
-                    <td><font size="2"><strong>Course Code</strong></font></td>
-                    <td><font size="2"><strong>Course Title</strong></font></td>
-                    <td><font color="#000000">Credit</font></td>
-                    <td><font color="#000000">Letter Grade</font></td>
+                    <td>
+                      <font size="2"><strong>Course Code</strong></font>
+                    </td>
+                    <td>
+                      <font size="2"><strong>Course Title</strong></font>
+                    </td>
+                    <td>
+                      <font color="#000000">Credit</font>
+                    </td>
+                    <td>
+                      <font color="#000000">Letter Grade</font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">233701</font></td>
-                    <td width="281"><font size="2">ADVANCED CALCULUS</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="third-233701"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">233701</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">ADVANCED CALCULUS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="third-233701">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">233703</font></td>
-                    <td width="281"><font size="2">ABSTRACT ALGEBRA</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="third-233703"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">233703</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">ABSTRACT ALGEBRA</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="third-233703">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">233705</font></td>
-                    <td width="281"><font size="2">REAL ANALYSIS</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="third-233705"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">233705</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">REAL ANALYSIS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="third-233705">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">233707</font></td>
-                    <td width="281"><font size="2">COMPLEX VARIABLES</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="third-233707"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">233707</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">COMPLEX VARIABLES</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="third-233707">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">233709</font></td>
-                    <td width="281"><font size="2">NUMERICAL ANALYSIS</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="third-233709"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">233709</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">NUMERICAL ANALYSIS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="third-233709">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">233711</font></td>
-                    <td width="281"><font size="2">PARTIAL DIFFERENTIAL EQUATIONS</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="third-233711"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">233711</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">PARTIAL DIFFERENTIAL EQUATIONS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="third-233711">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">233713</font></td>
-                    <td width="281"><font size="2">VECTOR ANALYSIS</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="third-233713"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">233713</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">VECTOR ANALYSIS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="third-233713">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">233714</font></td>
-                    <td width="281"><font size="2">SET THEORY AND LOGIC</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="third-233714"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">233714</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">SET THEORY AND LOGIC</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="third-233714">
+                      <font size="2"></font>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -641,80 +873,168 @@
                     </td>
                   </tr>
                   <tr align="center">
-                    <td><font size="2"><strong>Course Code</strong></font></td>
-                    <td><font size="2"><strong>Course Title</strong></font></td>
-                    <td><font color="#000000">Credit</font></td>
-                    <td><font color="#000000">Letter Grade</font></td>
+                    <td>
+                      <font size="2"><strong>Course Code</strong></font>
+                    </td>
+                    <td>
+                      <font size="2"><strong>Course Title</strong></font>
+                    </td>
+                    <td>
+                      <font color="#000000">Credit</font>
+                    </td>
+                    <td>
+                      <font color="#000000">Letter Grade</font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">243701</font></td>
-                    <td width="281"><font size="2">TOPOLOGY</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="fourth-243701"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">243701</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">TOPOLOGY</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="fourth-243701">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">243703</font></td>
-                    <td width="281"><font size="2">FUNCTIONAL ANALYSIS</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="fourth-243703"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">243703</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">FUNCTIONAL ANALYSIS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="fourth-243703">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">243705</font></td>
-                    <td width="281"><font size="2">DIFFERENTIAL GEOMETRY</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="fourth-243705"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">243705</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">DIFFERENTIAL GEOMETRY</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="fourth-243705">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">243707</font></td>
-                    <td width="281"><font size="2">MEASURE THEORY</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="fourth-243707"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">243707</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">MEASURE THEORY</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="fourth-243707">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">243709</font></td>
-                    <td width="281"><font size="2">NUMBER THEORY</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="fourth-243709"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">243709</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">NUMBER THEORY</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="fourth-243709">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">243711</font></td>
-                    <td width="281"><font size="2">PROBABILITY THEORY</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="fourth-243711"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">243711</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">PROBABILITY THEORY</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="fourth-243711">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">243713</font></td>
-                    <td width="281"><font size="2">OPERATIONS RESEARCH</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="fourth-243713"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">243713</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">OPERATIONS RESEARCH</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="fourth-243713">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">243717</font></td>
-                    <td width="281"><font size="2">GRAPH THEORY</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="fourth-243717"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">243717</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">GRAPH THEORY</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="fourth-243717">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">243718</font></td>
-                    <td width="281"><font size="2">FLUID MECHANICS</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="fourth-243718"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">243718</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">FLUID MECHANICS</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="fourth-243718">
+                      <font size="2"></font>
+                    </td>
                   </tr>
 
                   <tr>
-                    <td width="87" align="center"><font size="2">243720</font></td>
-                    <td width="281"><font size="2">THEORY OF RELATIVITY</font></td>
-                    <td width="108" align="center"><font size="2">4</font></td>
-                    <td width="91" align="center" id="fourth-243720"><font size="2"></font></td>
+                    <td width="87" align="center">
+                      <font size="2">243720</font>
+                    </td>
+                    <td width="281">
+                      <font size="2">THEORY OF RELATIVITY</font>
+                    </td>
+                    <td width="108" align="center">
+                      <font size="2">4</font>
+                    </td>
+                    <td width="91" align="center" id="fourth-243720">
+                      <font size="2"></font>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -752,7 +1072,7 @@
     </table>
   </div>
 
-  <script src="scripts.js"></script>
+  <script src="./js/scripts.js"></script>
 </body>
 
 </html>
