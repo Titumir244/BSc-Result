@@ -233,6 +233,16 @@ hr {
     margin-left: 5px;
 }
 
+#table1 tbody td:nth-child(8),
+#table1 tbody td:nth-child(9),
+#table2 tbody td:nth-child(13),
+#table3 tbody td:nth-child(13),
+#table4 tbody td:nth-child(12),
+#table5 tbody td:nth-child(14) {
+    font-weight: bolder;
+}
+
+
 .tab table::after {
     content: "© Md Ferdaus Alam";
     position: absolute;
@@ -567,6 +577,7 @@ select, button {
     animation: fadeIn 0.5s ease-out;
 
 }
+
 
 
 
