@@ -172,7 +172,7 @@ class TableBuilder {
      */
     static applyRowStyling(tr, rowClass) {
         if (rowClass && CONFIG.colorMap[rowClass]) {
-            tr.style.color = CONFIG.colorMap[rowClass];
+            tr.style.backgroundColor = CONFIG.colorMap[rowClass];
         }
     }
     
@@ -348,6 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Global Functions (for HTML onclick)
 // ==========================
 window.downloadPDF = PDFManager.downloadPDF;
+
 
 
 
