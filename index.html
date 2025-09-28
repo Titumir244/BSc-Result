@@ -5,17 +5,15 @@
     <meta charset="UTF-8">
     <title>Result Sheet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <script src="blob:http://results.nu.ac.bd/fb88129a-de83-414f-8f32-d58c9bbae548"></script>
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
 </head>
 
 <body>
     <section class="navbar">
         <div class="logo">
-            <img src="./RESULT_files/IMG_20250923_075641.jpg" alt="">
-            <span>Md Ferdaus Alam</span>
+            <a href="./index.html"><img src="./image/logo.jpg" alt=""></a>
+            <a href="./index.html">Md Ferdaus Alam</a>
         </div>
         <ul>
             <li><a href="./index.html">Result Sheet</a></li>
@@ -209,12 +207,13 @@
         </thead>
         <tbody></tbody>
     </table> -->
-
-
     </section>
+    <!-- View Detailed Marksheet -->
     <section class="tabl"><br>
         <div class="but">
-            <button style="text-align: center;" onclick="downloadPDF('pdf')">Download</button>
+            <button onclick="downloadPDF('pdf')">
+            <i class="fas fa-download"></i> Download
+        </button>
         </div>
         <table id="pdf" width="760" border="0" align="center" cellpadding="1" cellspacing="1" class="tble">
             <tbody>
@@ -224,7 +223,7 @@
                             <tbody>
                                 <tr>
                                     <td width="3" align="center">&nbsp;</td>
-                                    <td width="65" rowspan="2" align="center"><img src="./RESULT_files/NULOGO.jpg"
+                                    <td width="65" rowspan="2" align="center"><img src="./image/NULOGO.jpg"
                                             alt="nu logo" border="0" height="65" width="auto"></td>
                                     <td width="614" align="center">
                                         <font size="+2">National University, Bangladesh</font>
@@ -285,10 +284,6 @@
                                 <tr bgcolor="#FFFFFF">
                                     <td align="left">Subject Name</td>
                                     <td colspan="4">37 - MATHEMATICS </td>
-                                </tr>
-                                <tr bgcolor="#FFFFFF">
-                                    <td align="left">Credit <span class="style4">(Completed/Total)</span></td>
-                                    <td colspan="4">56/128</td>
                                 </tr>
 
                                 <tr bgcolor="#FFFFFF">
@@ -553,7 +548,7 @@
             </tbody>
         </table>
     </section>
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
