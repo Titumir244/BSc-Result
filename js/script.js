@@ -7,10 +7,10 @@ const CONFIG = {
     
     // Color mapping for different grades
     colorMap: {
-        first: "#2563eb",
-        second: "#059669",
-        third: "#c720bfff",
-        fail: "#dc2626"
+        first: "#012b86ff",
+        second: "#00573bff",
+        third: "#cd03ffff",
+        fail: "#db6ba3ff"
     },
     
     // Table configurations
@@ -141,7 +141,7 @@ class TableBuilder {
         
         // Highlight "F" grades
         if (cellContent.trim().toUpperCase() === "F") {
-            td.style.color = "#ff6666";
+            td.style.color = "#ff0000ff";
             td.style.fontWeight = "bold";
         }
         
@@ -348,5 +348,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Global Functions (for HTML onclick)
 // ==========================
 window.downloadPDF = PDFManager.downloadPDF;
+
 
 
