@@ -7,10 +7,10 @@ const CONFIG = {
     
     // Color mapping for different grades
     colorMap: {
-        first: "#012b86ff",
-        second: "#00573bff",
-        third: "#cd03ffff",
-        fail: "#db6ba3ff"
+        first: "#bfdbfe",
+        second: "#bbf7d0",
+        third: "#e9d5ff",
+        fail: "#fecaca"
     },
     
     // Table configurations
@@ -348,6 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Global Functions (for HTML onclick)
 // ==========================
 window.downloadPDF = PDFManager.downloadPDF;
+
 
 
 
