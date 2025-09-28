@@ -166,7 +166,7 @@ hr {
 }
 
 #table1 h1, #table2 h1, #table3 h1, #table4 h1 {
-    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -566,3 +566,4 @@ select, button {
     animation: fadeIn 0.5s ease-out;
 
 }
+
