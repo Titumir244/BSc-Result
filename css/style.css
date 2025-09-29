@@ -235,13 +235,19 @@ hr {
 }
 
 #table1 tbody td:nth-child(8),
+#table1 tbody td:nth-child(8),
 #table1 tbody td:nth-child(9),
 #table2 tbody td:nth-child(13),
+#table2 tbody td:nth-child(14),
 #table3 tbody td:nth-child(13),
+#table3 tbody td:nth-child(14),
 #table4 tbody td:nth-child(12),
-#table5 tbody td:nth-child(14) {
+#table4 tbody td:nth-child(13),
+#table5 tbody td:nth-child(14),
+#table5 tbody td:nth-child(15) {
     font-weight: bolder;
     font-size: 18px;
+    color: #764ba2;
 }
 
 #table1 tbody td:nth-child(4),
@@ -249,6 +255,7 @@ hr {
 #table1 tbody td:nth-child(6),
 #table1 tbody td:nth-child(7) {
     font-weight: bold;
+    color: #1976d2;
 }
 
 .tab tbody td {
@@ -591,6 +598,7 @@ select, button {
     animation: fadeIn 0.5s ease-out;
 
 }
+
 
 
 
