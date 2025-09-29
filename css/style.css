@@ -230,8 +230,10 @@ hr {
 
 .tab tbody td:nth-child(2) {
     text-align: left;
-    font-weight: bold;
+    font-weight: bolder;
     margin-left: 5px;
+    color: #4b0082;
+    font-size: 18px;
 }
 
 #table1 tbody td:nth-child(8),
@@ -598,6 +600,7 @@ select, button {
     animation: fadeIn 0.5s ease-out;
 
 }
+
 
 
 
