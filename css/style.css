@@ -271,7 +271,7 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%) rotate(-30deg);
     font-size: 4rem;
-    color: rgba(0, 0, 0, 0.05);
+    color: rgba(100, 100, 100, 0.12);
     white-space: nowrap;
     pointer-events: none;
     font-weight: bold;
@@ -598,6 +598,7 @@ select, button {
     animation: fadeIn 0.5s ease-out;
 
 }
+
 
 
 
