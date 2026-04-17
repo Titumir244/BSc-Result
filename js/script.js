@@ -18,7 +18,7 @@ const CONFIG = {
         table1: { startRow: 4, endRow: 19, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16] },
         table2: { startRow: 24, endRow: 39, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24] },
         table3: { startRow: 44, endRow: 59, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24] },
-        // table4: { startRow: 64, endRow: 79, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22] },
+        table4: { startRow: 64, endRow: 79, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22] },
         // table5: { startRow: 84, endRow: 99, columns: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24] }
     },
     
